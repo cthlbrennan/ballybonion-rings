@@ -3,7 +3,7 @@ import time
 
 # PRICES below is capitalised, as per the convention 
 # for denoting some variables as constants which should
-# not be changed
+# not be changed 
 
 PRICES = {
 	'small-onion-rings': 3,
