@@ -101,7 +101,7 @@ def not_make_order():
         else:
             print('Invalid input, please try again')
             time.sleep(1)
-            continue
+            not_make_order()
 
 def vacate_premises():
     clear()
@@ -109,7 +109,7 @@ def vacate_premises():
     print("It will be relayed to An Garda Siochána and will be the basis for a")
     print("trespassing charge against you.")
     print("Please remove yourself from the premises and allow the next customer to order.")
-    time.sleep(5)
+    time.sleep(7)
     startscreen()
 
 def main_menu():
