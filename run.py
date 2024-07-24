@@ -9,7 +9,7 @@ import sys
 
 PRICES = {
 	'small_onion_rings': 3,
-	'mozarella_sticks': 3,
+	'mozzarella_sticks': 3,
 	'small_chips': 3,
 	'medium_chips': 3.50,
 	'large_chips': 4,
@@ -46,12 +46,6 @@ class NewOrder:
             existing_quantity = self.new_order[item]
             new_quantity = quantity + existing_quantity
             self.new_order[item] = new_quantity
-        else:
-            print(f"Item '{item}' not found.")
-
-    def remove_item(self, item):
-        if (item in self.new_order):
-            self.new_order[item] = None
         else:
             print(f"Item '{item}' not found.")
 
@@ -188,6 +182,7 @@ def starters_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('mozzarella_sticks', ordered_quantity)
                             print(f'{ordered_quantity} x Mozzarella Sticks added to your order')
+                            time.sleep(2)
                     except ValueError:
                         print('Invalid input, try again.')
                 case '3':
@@ -232,6 +227,7 @@ def sides_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('medium_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Medium Chips added to your order')
+                            time.sleep(2)                            
                     except ValueError:
                         print('Invalid input, try again.')
                 case '3':
@@ -241,6 +237,7 @@ def sides_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('large_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Large Chips added to your order')
+                            time.sleep(2)
                     except ValueError:
                         print('Invalid input, try again.')
                 case '4':
@@ -286,6 +283,7 @@ def mains_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('onion_rings_deluxe', ordered_quantity)
                             print(f'{ordered_quantity} x Onion Rings Deluxe added to your order')
+                            time.sleep(2)                            
                     except ValueError:
                         print('Invalid input, try again.')
                 case '3':
@@ -295,6 +293,7 @@ def mains_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('ballybonion_super_box', ordered_quantity)
                             print(f'{ordered_quantity} x BallybOnion Super Box added to your order')
+                            time.sleep(2)                            
                     except ValueError:
                         print('Invalid input, try again.')
                 case '4':
@@ -338,6 +337,7 @@ def drinks_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('water', ordered_quantity)
                             print(f'{ordered_quantity} x Water added to your order')
+                            time.sleep(2)                            
                     except ValueError:
                         print('Invalid input, try again.')
                 case '3':
@@ -349,7 +349,7 @@ def drinks_menu():
                 case _:
                     print('Invalid input, please try again.')
 
-def drinks_menu():
+def desserts_menu():
     while True:
         clear()
         print('Desserts:')
@@ -381,6 +381,7 @@ def drinks_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('pistachio_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Pistachio Onion Rings added to your order')
+                            time.sleep(2)                            
                     except ValueError:
                         print('Invalid input, try again.')
                 case '3':
@@ -391,6 +392,59 @@ def drinks_menu():
                     break
                 case _:
                     print('Invalid input, please try again.')
+
+# cancel items functionality based on code set out in https://www.geeksforgeeks.org/iterate-python-dictionary-using-enumerate-function/
+def cancel_items():
+    clear()
+    valid_items = []
+    total = 0
+    for name, quantity in new_order.new_order.items():
+        if quantity is not None:
+            valid_items.append((name, quantity))
+    
+    if valid_items == []:
+        print('There are no items currently on your order. Returning to Main Menu')
+        time.sleep(2)
+        main_menu()
+    else:
+        for index, (name, quantity) in enumerate(valid_items, start=1):
+            subtotal = (quantity * PRICES[name])
+            total += subtotal 
+            print(f'{index}. {quantity} x {name}: €{subtotal}')
+        print(f'Total: €{total}')
+
+        print('')    
+        selection = input('Please select option you would like to cancel\n')
+        remove_item(int(selection))
+        if valid_items == []:
+            print('There are no items currently on your order. Returning to Main Menu')
+            time.sleep(2)
+            main_menu()
+
+# Ensure remove_item function is defined to handle the removal logic
+
+            
+# remove item functionality based on code set out in https://www.geeksforgeeks.org/python-filter-non-none-dictionary-keys/
+def remove_item(index):
+    # Adjust index for zero-based indexing
+    adjusted_index = index - 1
+    
+    # Filter out None values and convert dictionary items to a list
+    items_list = [(k, v) for k, v in new_order.new_order.items() if v is not None]
+    
+    try:
+        # Remove the item based on the adjusted index
+        removed_item = items_list.pop(adjusted_index)
+        del new_order.new_order[removed_item[0]]
+        print(f"Item '{removed_item[0]}' has been removed.")
+        time.sleep(2)
+        cancel_items()
+    except IndexError:
+        print("Invalid selection. Please choose a valid index.")
+        time.sleep(2)
+        cancel_items()
+
+
 
 def main():
     new_order = NewOrder()
