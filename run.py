@@ -8,35 +8,35 @@ import sys
 # not be changed 
 
 PRICES = {
-	'small-onion-rings': 3,
-	'mozarella-sticks': 3,
-	'small-chips': 3,
-	'medium-chips': 3.50,
-	'large-chips': 4,
-	'onion-rings-supreme':6,
-	'onion-rings-deluxe':7,
-	'onion-rings-ballybonion-super-box':10,
+	'small_onion_rings': 3,
+	'mozarella_sticks': 3,
+	'small_chips': 3,
+	'medium_chips': 3.50,
+	'large_chips': 4,
+	'onion_rings_supreme':6,
+	'onion_rings_deluxe':7,
+	'onion_rings_ballybonion_super_box':10,
 	'coke':2,
 	'water':2,
-	'nutella-onion-rings':5, 
-	'pistachio-onion-rings':5.50,
+	'nutella_onion_rings':5, 
+	'pistachio_onion_rings':5.50,
 	}
 
 class NewOrder:
     def __init__(self):
         self.new_order = {
-	'small-onion-rings': None,
-	'mozzarella-sticks': None,
-	'small-chips': None,
-	'medium-chips': None,
-	'large-chips': None,
-	'onion-rings-supreme':None,
-	'onion-rings-deluxe':None,
-	'ballybonion-super-box':None,
+	'small_onion_rings': None,
+	'mozzarella_sticks': None,
+	'small_chips': None,
+	'medium_chips': None,
+	'large_chips': None,
+	'onion_rings_supreme':None,
+	'onion_rings_deluxe':None,
+	'ballybonion_super_box':None,
 	'coke':None,
 	'water':None,
-	'nutella-onion-rings':None, 
-	'pistachio-onion-rings':None,
+	'nutella_onion_rings':None, 
+	'pistachio_onion_rings':None,
 	}
 
     def add_item(self, item, quantity):
@@ -176,7 +176,7 @@ def starters_menu():
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
                             ordered_quantity = int(ordered_quantity)
-                            new_order.add_item('small-onion-rings', ordered_quantity)
+                            new_order.add_item('small_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Small Onion Rings added to your order')
                             time.sleep(2)
                     except ValueError:
@@ -186,7 +186,7 @@ def starters_menu():
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
                             ordered_quantity = int(ordered_quantity)
-                            new_order.add_item('mozzarella-sticks', ordered_quantity)
+                            new_order.add_item('mozzarella_sticks', ordered_quantity)
                             print(f'{ordered_quantity} x Mozzarella Sticks added to your order')
                     except ValueError:
                         print('Invalid input, try again.')
@@ -199,7 +199,58 @@ def starters_menu():
                 case _:
                     print('Invalid input, please try again.')
 
-
+def sides_menu():
+    while True:
+        clear()
+        print('Sides:')
+        print('1. Small Chips: €3')
+        print('2. Medium Chips: €3.50')
+        print('3. Large Chips: €4')
+        print('4. Return back to Main Menu')
+        print('5. Finalise your order')
+    
+        selection = input('Please select from the options above\n')
+        menu_options = ['1', '2', '3', '4', '5']
+        if selection not in menu_options:
+            print('Invalid selection, please try again')
+        else:
+            match selection:
+                case '1': 
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('small_chips', ordered_quantity)
+                            print(f'{ordered_quantity} x Small Chips added to your order')
+                            time.sleep(2)
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '2':
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('medium_chips', ordered_quantity)
+                            print(f'{ordered_quantity} x Medium Chips added to your order')
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '3':
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('large_chips', ordered_quantity)
+                            print(f'{ordered_quantity} x Large Chips added to your order')
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '4':
+                    main_menu()
+                    break
+                case '5':
+                    finalise_order()
+                    break
+                case _:
+                    print('Invalid input, please try again.')
 
 
 
