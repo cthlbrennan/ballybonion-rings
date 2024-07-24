@@ -15,7 +15,7 @@ PRICES = {
 	'large_chips': 4,
 	'onion_rings_supreme':6,
 	'onion_rings_deluxe':7,
-	'ballybonion_super_box':10,
+	'ballybonion_super_box': 10,
 	'coke':2,
 	'water':2,
 	'nutella_onion_rings':5, 
@@ -76,19 +76,17 @@ def startscreen():
     elif (make_an_order.lower() == 'n'):
         not_make_order()
     else:
-        print('Input is invalid')
+        print(f'{make_an_order} is invalid. Please input either y or n')
+        time.sleep(2)
         startscreen()
 
 # code based on https://www.geeksforgeeks.org/clear-screen-python/
 def clear():
-    if sys.platform.startswith('win'):
-        os.system('cls')  
-    else:
-        os.system('clear')
+    os.system("cls" if os.name == "nt" else "clear")
 
 def not_make_order():
     clear()
-    print("That's ok! Come back s3oon when you're not so poor and/or feckless!")
+    print("That's ok! Come back soon when you're not so poor and/or feckless!")
     print('Please vacate the premises immediately or we will notify An Garda Síochana.')
     answer = input('New customer? y/n\n')
     while True:
@@ -264,6 +262,7 @@ def mains_menu():
         menu_options = ['1', '2', '3', '4', '5']
         if selection not in menu_options:
             print('Invalid selection, please try again')
+            time.sleep(2)
         else:
             match selection:
                 case '1': 
@@ -376,7 +375,7 @@ def desserts_menu():
                         print('Invalid input, try again.')
                 case '2':
                     try:            
-                        ordered_quantity2 = input('How many?\n')
+                        ordered_quantity = input('How many?\n')
                         if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('pistachio_onion_rings', ordered_quantity)
@@ -407,23 +406,34 @@ def cancel_items():
         time.sleep(2)
         main_menu()
     else:
+        print('0. Return to Main Menu')
         for index, (name, quantity) in enumerate(valid_items, start=1):
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{index}. {quantity} x {name}: €{subtotal}')
+            print(f'{index}. Cancel {quantity} x {name}: €{subtotal}?')
         print(f'Total: €{total}')
-
+        print('Please note that selecting an item will remove every portion of it from your order.')
         print('')
-        print("Please select option you would like to cancel, or enter 0 to return to Main Menu")    
-        selection = int(input(''))
-        if selection == 0:
-            main_menu()
-        else:
-            remove_item(int(selection))
-            if valid_items == []:
-                print('There are no items currently on your order. Returning to Main Menu')
-                time.sleep(2)
-                main_menu()
+        print("Please select option")    
+        while True:
+            try:
+                selection = int(input(''))
+                if selection == 0:
+                    main_menu()
+                    break
+                elif selection <= len(valid_items):  # Check if selection is within valid range
+                    remove_item(selection)
+                    if not valid_items:
+                        print('There are no items currently on your order. Returning to Main Menu')
+                        time.sleep(2)
+                        main_menu()
+                        break
+                else:
+                    print(f'{selection} is an invalid input.')
+            except ValueError:
+                print(f"{selection} is an input. Please enter a number.")
+                
+        cancel_items()
 
 # Ensure remove_item function is defined to handle the removal logic
 
