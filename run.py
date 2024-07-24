@@ -31,12 +31,12 @@ class NewOrder:
 	'medium_chips': None,
 	'large_chips': None,
 	'onion_rings_supreme':None,
-	'onion_rings_deluxe':None,
-	'ballybonion_super_box':None,
-	'coke':None,
-	'water':None,
-	'nutella_onion_rings':None, 
-	'pistachio_onion_rings':None,
+	'onion_rings_deluxe': None,
+	'ballybonion_super_box': None,
+	'coke': None,
+	'water': None,
+	'nutella_onion_rings': None, 
+	'pistachio_onion_rings': None,
 	}
 
     def add_item(self, item, quantity):
@@ -376,7 +376,7 @@ def desserts_menu():
                         print('Invalid input, try again.')
                 case '2':
                     try:            
-                        ordered_quantity = input('How many?\n')
+                        ordered_quantity2 = input('How many?\n')
                         if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('pistachio_onion_rings', ordered_quantity)
@@ -413,13 +413,17 @@ def cancel_items():
             print(f'{index}. {quantity} x {name}: €{subtotal}')
         print(f'Total: €{total}')
 
-        print('')    
-        selection = input('Please select option you would like to cancel\n')
-        remove_item(int(selection))
-        if valid_items == []:
-            print('There are no items currently on your order. Returning to Main Menu')
-            time.sleep(2)
+        print('')
+        print("Please select option you would like to cancel, or enter 0 to return to Main Menu")    
+        selection = int(input(''))
+        if selection == 0:
             main_menu()
+        else:
+            remove_item(int(selection))
+            if valid_items == []:
+                print('There are no items currently on your order. Returning to Main Menu')
+                time.sleep(2)
+                main_menu()
 
 # Ensure remove_item function is defined to handle the removal logic
 
