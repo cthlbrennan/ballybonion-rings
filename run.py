@@ -1,5 +1,7 @@
 # import time for sleep method
 import time
+import os
+import sys
 
 # PRICES below is capitalised, as per the convention 
 # for denoting some variables as constants which should
@@ -70,6 +72,7 @@ class NewOrder:
         return ordered
 
 def startscreen():
+    clear()
     print("Welcome to BallybOnion Rings, Ballybunion's greatest purveyor of")
     print("pun-based (or should we say pun-ion-based) fast foods!")
     make_an_order = input("Would you like to make an order? y/n\n")
@@ -82,8 +85,16 @@ def startscreen():
         print('Input is invalid')
         startscreen()
 
+# code based on https://www.geeksforgeeks.org/clear-screen-python/
+def clear():
+    if sys.platform.startswith('win'):
+        os.system('cls')  
+    else:
+        os.system('clear')
+
 def not_make_order():
-    print("That's ok! Come back soon when you're not so poor and/or feckless!")
+    clear()
+    print("That's ok! Come back s3oon when you're not so poor and/or feckless!")
     print('Please vacate the premises immediately or we will notify An Garda Síochana.')
     answer = input('New customer? y/n\n')
     while True:
@@ -95,9 +106,11 @@ def not_make_order():
             break
         else:
             print('Invalid input, please try again')
+            time.sleep(1)
             continue
 
 def vacate_premises():
+    clear()
     print("This terminal has recorded a photographic image of you.")
     print("It will be relayed to An Garda Siochána and will be the basis for a")
     print("trespassing charge against you.")
@@ -106,6 +119,7 @@ def vacate_premises():
     startscreen()
 
 def main_menu():
+    clear()
     print("Please select from one of the following sub menus:")
     print("1. Starters")
     print("2. Sides")
@@ -143,13 +157,14 @@ def main_menu():
                 print('Invalid selection, try again.')
 
 def starters_menu():
-    print('Starters:')
-    print('1. Small Onion Rings: €3')
-    print('2. Mozzarella Sticks: €3')
-    print('3. Return back to Main Menu')
-    print('4. Finalise your order')
-    
     while True:
+        clear()
+        print('Starters:')
+        print('1. Small Onion Rings: €3')
+        print('2. Mozzarella Sticks: €3')
+        print('3. Return back to Main Menu')
+        print('4. Finalise your order')
+    
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
@@ -163,6 +178,7 @@ def starters_menu():
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('small-onion-rings', ordered_quantity)
                             print(f'{ordered_quantity} x Small Onion Rings added to your order')
+                            time.sleep(2)
                     except ValueError:
                         print('Invalid input, try again.')
                 case '2':
