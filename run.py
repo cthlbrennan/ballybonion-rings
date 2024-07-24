@@ -118,8 +118,9 @@ def main_menu():
     print("3. Mains")
     print("4. Drinks")
     print("5. Desserts")
-    print("6. Cancel items from order")
-    print("7. Finalise order")
+    print("6. Display current order")    
+    print("7. Cancel items from current order")
+    print("8. Finalise order")
     
     while True:
         menu_selection = input("Please input the number which corresponds with your selection\n")
@@ -140,9 +141,12 @@ def main_menu():
                 desserts_menu()
                 break
             case '6':
-                cancel_items()
+                display_order()
                 break
             case '7':
+                cancel_items()
+                break
+            case '8':
                 finalise_order()
                 break
             case _:
@@ -373,6 +377,7 @@ def desserts_menu():
                             time.sleep(2)
                     except ValueError:
                         print('Invalid input, try again.')
+
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -458,6 +463,29 @@ def remove_item(index):
         time.sleep(2)
         cancel_items()
 
+
+def display_order():
+    clear()
+    current_order = []
+    total = 0
+    for name, quantity in new_order.new_order.items():
+        if quantity is not None:
+            current_order.append((name, quantity))
+    
+    if current_order == []:
+        print('There are no items currently on your order. Returning to Main Menu')
+        time.sleep(2)
+        main_menu()
+    else:
+        for name, quantity in current_order:
+            subtotal = (quantity * PRICES[name])
+            total += subtotal 
+            print(f'{quantity} x {name}: €{subtotal}')
+        print(f'Total: €{total}')
+        print('')
+        print('Returning to Main Menu')
+        time.sleep(3)
+        main_menu()
 
 
 def main():
