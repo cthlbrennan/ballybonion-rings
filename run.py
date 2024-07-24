@@ -15,7 +15,7 @@ PRICES = {
 	'large_chips': 4,
 	'onion_rings_supreme':6,
 	'onion_rings_deluxe':7,
-	'onion_rings_ballybonion_super_box':10,
+	'ballybonion_super_box':10,
 	'coke':2,
 	'water':2,
 	'nutella_onion_rings':5, 
@@ -253,8 +253,144 @@ def sides_menu():
                     print('Invalid input, please try again.')
 
 
+def mains_menu():
+    while True:
+        clear()
+        print('Mains:')
+        print('1. Onion Rings Supreme: €6')
+        print('2. Onion Rings Deluxe: €7')
+        print('3. BallybOnion Super Box: €10')
+        print('4. Return back to Main Menu')
+        print('5. Finalise your order')
+    
+        selection = input('Please select from the options above\n')
+        menu_options = ['1', '2', '3', '4', '5']
+        if selection not in menu_options:
+            print('Invalid selection, please try again')
+        else:
+            match selection:
+                case '1': 
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('onion_rings_supreme', ordered_quantity)
+                            print(f'{ordered_quantity} x Onion Rings Supreme added to your order')
+                            time.sleep(2)
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '2':
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('onion_rings_deluxe', ordered_quantity)
+                            print(f'{ordered_quantity} x Onion Rings Deluxe added to your order')
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '3':
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('ballybonion_super_box', ordered_quantity)
+                            print(f'{ordered_quantity} x BallybOnion Super Box added to your order')
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '4':
+                    main_menu()
+                    break
+                case '5':
+                    finalise_order()
+                    break
+                case _:
+                    print('Invalid input, please try again.')
 
+def drinks_menu():
+    while True:
+        clear()
+        print('Drinks:')
+        print('1. Coke: €2')
+        print('2. Water: €2')
+        print('3. Return back to Main Menu')
+        print('4. Finalise your order')
+    
+        selection = input('Please select from the options above\n')
+        menu_options = ['1', '2', '3', '4']
+        if selection not in menu_options:
+            print('Invalid selection, please try again')
+        else:
+            match selection:
+                case '1': 
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('coke', ordered_quantity)
+                            print(f'{ordered_quantity} x Coke added to your order')
+                            time.sleep(2)
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '2':
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('water', ordered_quantity)
+                            print(f'{ordered_quantity} x Water added to your order')
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '3':
+                    main_menu()
+                    break
+                case '4':
+                    finalise_order()
+                    break
+                case _:
+                    print('Invalid input, please try again.')
 
+def drinks_menu():
+    while True:
+        clear()
+        print('Desserts:')
+        print('1. Nutella Onion Rings: €5')
+        print('2. Pistachio Onion Rings: €5.50')
+        print('3. Return back to Main Menu')
+        print('4. Finalise your order')
+    
+        selection = input('Please select from the options above\n')
+        menu_options = ['1', '2', '3', '4']
+        if selection not in menu_options:
+            print('Invalid selection, please try again')
+        else:
+            match selection:
+                case '1': 
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('nutella_onion_rings', ordered_quantity)
+                            print(f'{ordered_quantity} x Nutella Onion Rings added to your order')
+                            time.sleep(2)
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '2':
+                    try:            
+                        ordered_quantity = input('How many?\n')
+                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                            ordered_quantity = int(ordered_quantity)
+                            new_order.add_item('pistachio_onion_rings', ordered_quantity)
+                            print(f'{ordered_quantity} x Pistachio Onion Rings added to your order')
+                    except ValueError:
+                        print('Invalid input, try again.')
+                case '3':
+                    main_menu()
+                    break
+                case '4':
+                    finalise_order()
+                    break
+                case _:
+                    print('Invalid input, please try again.')
 
 def main():
     new_order = NewOrder()
@@ -262,3 +398,5 @@ def main():
 
 new_order = NewOrder()
 startscreen()
+
+
