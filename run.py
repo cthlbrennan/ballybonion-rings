@@ -487,6 +487,49 @@ def display_order():
         time.sleep(3)
         main_menu()
 
+def finalise_order():
+    display_finalised_order()
+    print('This is your order. Would you like to make any changes before submitting it to our ununionised onion peddlers?')
+    print('1. Return to Main Menu')
+    print('2. Cancel items from order')
+    print('3. Proceed to Payment')
+    while True:
+            try:
+                selection = int(input(''))
+                if selection == 1:
+                    main_menu()
+                    break
+                elif selection == 2:
+                    cancel_items()
+                    break
+                elif selection == 3:
+                    process_payment()
+                    break
+            except ValueError:
+                print(f'{selection} is invalid. Try again.')
+
+
+
+def display_finalised_order():
+    clear()
+    current_order = []
+    total = 0
+    for name, quantity in new_order.new_order.items():
+        if quantity is not None:
+            current_order.append((name, quantity))
+    
+    if current_order == []:
+        print('There are no items currently on your order. Returning to Main Menu')
+        time.sleep(2)
+        main_menu()
+    else:
+        for name, quantity in current_order:
+            subtotal = (quantity * PRICES[name])
+            total += subtotal 
+            print(f'{quantity} x {name}: €{subtotal}')
+        print(f'Total: €{total}')
+
+
 
 def main():
     new_order = NewOrder()
