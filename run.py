@@ -2,6 +2,7 @@
 import time
 import os
 import sys
+import re
 
 # The dictionaries NAMES and PRICES below are capitalised, as per the convention 
 # for denoting some variables as constants which should
@@ -530,7 +531,7 @@ def display_order():
         print('2. Cancel items')
         print('3. Finalise order')
         while True:
-            answer = input('Please make selection')
+            answer = input('Please make selection\n')
             if answer not in ['1', '2', '3']:
                 print(f'{answer} is not a valid input, please try again')
             else:
@@ -547,26 +548,29 @@ def display_order():
 
 def finalise_order():
     display_finalised_order()
+    print('')
     print('This is your order. Would you like to make any changes before submitting it to our ununionised onion peddlers?')
+    print('')
     print('1. Return to Main Menu')
     print('2. Cancel items from order')
     print('3. Proceed to Payment')
     while True:
-            try:
-                selection = int(input(''))
-                if selection == 1:
-                    main_menu()
-                    break
-                elif selection == 2:
-                    cancel_items()
-                    break
-                elif selection == 3:
-                    process_payment()
-                    break
-            except ValueError:
-                print(f'{selection} is invalid. Try again.')
-
-
+            answer = input('Please make selection\n')
+            if answer not in ['1', '2', '3']:
+                print(f'{answer} is not a valid input, please try again')
+                time.sleep(2)
+                finalise_order()
+            else:
+                match (answer):
+                    case '1':
+                        main_menu()
+                        break
+                    case '2':
+                        cancel_items()
+                        break
+                    case '3':
+                        process_payment()
+                        break
 
 def display_finalised_order():
     clear()
@@ -589,6 +593,73 @@ def display_finalised_order():
             print(f'{quantity} x {NAMES[name]}: €{subtotal}')
         print(f'Total: €{total}')
 
+def process_payment():
+    clear()
+    pattern = r'^[0-9]{4}$'
+    print('Processing Order')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order.')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order..')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order...')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order.')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order..')
+    time.sleep(0.3)
+    clear()
+    print('Processing Order...')
+    time.sleep(0.3)
+    clear()
+    pin = input('Please enter your four-digit bank card pin number that we will not record on our servers...')
+    match = re.match(pattern, pin)
+    if match:
+        clear()
+        print('Thank you')
+        time.sleep(1)
+        clear()
+        print('Processing Payment')
+        time.sleep(0.3)
+        clear()
+        print('Processing Payment.')
+        time.sleep(0.3)
+        clear()
+        print('Processing Payment..')
+        time.sleep(0.3)
+        clear()
+        print('Processing Payment...')
+        time.sleep(0.3)
+        clear()       
+        print('Processing Payment')
+        time.sleep(0.3)
+        clear()
+        print('Processing Payment.')
+        time.sleep(0.3)
+        clear()
+        print('Processing Payment..')
+        time.sleep(0.3)
+        clear()
+        print('Processing Payment...')
+        time.sleep(0.3)
+        clear()
+        print('Payment Approved.')
+        print('Thanks for your custom.')
+        time.sleep(2)
+        startscreen()  
+    else:
+        print(f"'{pin}' is not a valid four digit pin code, please try again.")
+        time.sleep(2)
+        process_payment()
+
 
 
 def main():
@@ -597,5 +668,4 @@ def main():
 
 new_order = NewOrder()
 startscreen()
-
 
