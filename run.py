@@ -122,7 +122,6 @@ def main_menu():
     print("8. Finalise order")
     
     while True:
-        clear()
         menu_selection = input("Please input the number which corresponds with your selection\n")
         match (menu_selection):
             case '1':
@@ -150,8 +149,9 @@ def main_menu():
                 finalise_order()
                 break
             case _:
-                print('Invalid selection, try again.')
+                print(f'{menu_selection} is an invalid selection, please try again.')
                 time.sleep(2)
+                main_menu()
 
 def starters_menu():
     while True:
@@ -518,15 +518,32 @@ def display_order():
         time.sleep(2)
         main_menu()
     else:
+        print('Your Order:')
+        print('')
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{quantity} x {name}: €{subtotal}')
+            print(f'{quantity} x {NAMES[name]}: €{subtotal}')
         print(f'Total: €{total}')
         print('')
-        print('Returning to Main Menu')
-        time.sleep(3)
-        main_menu()
+        print('1. Return to Main Menu')
+        print('2. Cancel items')
+        print('3. Finalise order')
+        while True:
+            answer = input('Please make selection')
+            if answer not in ['1', '2', '3']:
+                print(f'{answer} is not a valid input, please try again')
+            else:
+                match (answer):
+                    case '1':
+                        main_menu()
+                        break
+                    case '2':
+                        cancel_items()
+                        break
+                    case '3':
+                        finalise_order()
+                        break
 
 def finalise_order():
     display_finalised_order()
@@ -564,6 +581,8 @@ def display_finalised_order():
         time.sleep(2)
         main_menu()
     else:
+        print('Your Finalised Order:')
+        print('')
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
