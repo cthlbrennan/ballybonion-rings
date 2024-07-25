@@ -171,30 +171,36 @@ def starters_menu():
         else:
             match selection:
                 case '1': 
-                    try:            
-                        ordered_quantity = input('How many?\n') 
+                    try:
+                        ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('small_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Small Onion Rings added to your order')
-                            time.sleep(2)
+                            time.sleep(2)                                     
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
                 case '2':
-                    try:            
+                    try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('mozzarella_sticks', ordered_quantity)
                             print(f'{ordered_quantity} x Mozzarella Sticks added to your order')
-                            time.sleep(2)
+                            time.sleep(2)   
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
@@ -226,16 +232,19 @@ def sides_menu():
         else:
             match selection:
                 case '1': 
-                    try:            
-                        ordered_quantity = input('How many?\n')
+                    try:
+                        ordered_quantity = input('How many?\n')                        
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('small_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Small Chips added to your order')
-                            time.sleep(2)
+                            time.sleep(2)                              
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
@@ -243,27 +252,33 @@ def sides_menu():
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('medium_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Medium Chips added to your order')
-                            time.sleep(2)                            
+                            time.sleep(2)                        
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
                 case '3':
-                    try:            
+                    try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('large_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Large Chips added to your order')
-                            time.sleep(2)
+                            time.sleep(2)           
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
@@ -299,9 +314,12 @@ def mains_menu():
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  # Make sure to call isdigit()
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('onion_rings_supreme', ordered_quantity)
                             print(f'{ordered_quantity} x Onion Rings Supreme added to your order')
@@ -313,27 +331,33 @@ def mains_menu():
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('onion_rings_deluxe', ordered_quantity)
                             print(f'{ordered_quantity} x Onion Rings Deluxe added to your order')
-                            time.sleep(2)                            
+                            time.sleep(2)
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
                 case '3':
-                    try:            
+                    try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('ballybonion_super_box', ordered_quantity)
                             print(f'{ordered_quantity} x BallybOnion Super Box added to your order')
-                            time.sleep(2)                            
+                            time.sleep(2)                             
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
@@ -367,27 +391,33 @@ def drinks_menu():
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('coke', ordered_quantity)
                             print(f'{ordered_quantity} x Coke added to your order')
-                            time.sleep(2)
+                            time.sleep(2)  
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
                 case '2':
-                    try:            
-                        ordered_quantity = input('How many?\n')
+                    try:
+                        ordered_quantity = input('How many?\n')                                                
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('water', ordered_quantity)
                             print(f'{ordered_quantity} x Water added to your order')
-                            time.sleep(2)                            
+                            time.sleep(2)                                    
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
@@ -418,30 +448,36 @@ def desserts_menu():
         else:
             match selection:
                 case '1': 
-                    try:            
-                        ordered_quantity = input('How many?\n')
+                    try:
+                        ordered_quantity = input('How many?\n')                                                
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('nutella_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Nutella Onion Rings added to your order')
-                            time.sleep(2)
+                            time.sleep(2)           
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
                 case '2':
-                    try:            
-                        ordered_quantity = input('How many?\n')
+                    try:
+                        ordered_quantity = input('How many?\n')                        
                         if ordered_quantity == '0':
-                            print('You must at least order 1 item to add it to your order.')
+                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
                             time.sleep(2)
-                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
+                        elif int(ordered_quantity) < 0:
+                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            time.sleep(2)
+                        elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('pistachio_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Pistachio Onion Rings added to your order')
-                            time.sleep(2)                            
+                            time.sleep(2) 
                     except ValueError:
                         print(f'"{ordered_quantity}" is an invalid input, try again.')
                         time.sleep(2)
@@ -480,7 +516,7 @@ def cancel_items():
         print("Please select option")    
         while True:
             try:
-                selection = int(input(''))
+                selection = int(input('\n'))
                 if selection == 0:
                     main_menu()
                     break
@@ -632,7 +668,7 @@ def process_payment():
     time.sleep(0.3)
     clear()
     while True:
-        pin = input('Please enter your four-digit bank card pin number that we will not record on our servers...')
+        pin = input('Please enter your four-digit bank card pin number that we will not record on our servers...\n')
         match = re.match(pattern, pin)
         if match:
             clear()
