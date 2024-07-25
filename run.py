@@ -49,22 +49,6 @@ class NewOrder:
         else:
             print(f"Item '{item}' not found.")
 
-    def display_order(self):
-        for category, items in self.ordered_items.items():
-            print(f"{category.capitalize()}:")
-            for item, quantity in items.items():
-                if quantity is not None:
-                    print(f"  - {item}: {quantity}")
-                else:
-                    print(f"  - {item}: Not ordered")
-        print()
-
-    def get_ordered_items(self):
-        ordered = {}
-        for category, items in self.ordered_items.items():
-            ordered[category] = {item: quantity for item, quantity in items.items() if quantity is not None}
-        return ordered
-
 def startscreen():
     clear()
     print("Welcome to BallybOnion Rings, Ballybunion's greatest purveyor of")
@@ -97,7 +81,7 @@ def not_make_order():
             vacate_premises()
             break
         else:
-            print('Invalid input, please try again')
+            print(f'{answer} is an invalid input, please try again')
             time.sleep(1)
             not_make_order()
 
@@ -169,8 +153,11 @@ def starters_menu():
             match selection:
                 case '1': 
                     try:            
-                        ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        ordered_quantity = input('How many?\n') 
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('small_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Small Onion Rings added to your order')
@@ -180,7 +167,10 @@ def starters_menu():
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('mozzarella_sticks', ordered_quantity)
                             print(f'{ordered_quantity} x Mozzarella Sticks added to your order')
@@ -215,7 +205,10 @@ def sides_menu():
                 case '1': 
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('small_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Small Chips added to your order')
@@ -225,7 +218,10 @@ def sides_menu():
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('medium_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Medium Chips added to your order')
@@ -235,7 +231,10 @@ def sides_menu():
                 case '3':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('large_chips', ordered_quantity)
                             print(f'{ordered_quantity} x Large Chips added to your order')
@@ -272,7 +271,10 @@ def mains_menu():
                 case '1': 
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('onion_rings_supreme', ordered_quantity)
                             print(f'{ordered_quantity} x Onion Rings Supreme added to your order')
@@ -282,7 +284,10 @@ def mains_menu():
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('onion_rings_deluxe', ordered_quantity)
                             print(f'{ordered_quantity} x Onion Rings Deluxe added to your order')
@@ -292,7 +297,10 @@ def mains_menu():
                 case '3':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('ballybonion_super_box', ordered_quantity)
                             print(f'{ordered_quantity} x BallybOnion Super Box added to your order')
@@ -326,7 +334,10 @@ def drinks_menu():
                 case '1': 
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('coke', ordered_quantity)
                             print(f'{ordered_quantity} x Coke added to your order')
@@ -336,7 +347,10 @@ def drinks_menu():
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('water', ordered_quantity)
                             print(f'{ordered_quantity} x Water added to your order')
@@ -370,7 +384,10 @@ def desserts_menu():
                 case '1': 
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('nutella_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Nutella Onion Rings added to your order')
@@ -381,7 +398,10 @@ def desserts_menu():
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
-                        if ordered_quantity.isdigit and int(ordered_quantity) >= 0:
+                        if ordered_quantity == '0':
+                            print('You must at least order 1 item to add it to your order.')
+                            time.sleep(2)
+                        if ordered_quantity.isdigit and int(ordered_quantity) > 0:
                             ordered_quantity = int(ordered_quantity)
                             new_order.add_item('pistachio_onion_rings', ordered_quantity)
                             print(f'{ordered_quantity} x Pistachio Onion Rings added to your order')
