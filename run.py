@@ -666,12 +666,16 @@ def process_payment():
             print('Payment Approved.')
             print('Thanks for your custom.')
             time.sleep(2)
+            reset_new_order()
             startscreen()
             break
         else:
             print(f"'{pin}' is not a valid four digit pin code, please try again.")
             time.sleep(2)
 
+def reset_new_order():
+    for i in new_order.new_order:
+        new_order.new_order[i] = None
 
 
 def main():
