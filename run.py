@@ -3,9 +3,24 @@ import time
 import os
 import sys
 
-# PRICES below is capitalised, as per the convention 
+# The dictionaries NAMES and PRICES below are capitalised, as per the convention 
 # for denoting some variables as constants which should
 # not be changed 
+
+NAMES = {
+    'small_onion_rings': 'Small Onion Rings',
+	'mozzarella_sticks': 'Mozzarella Sticks',
+	'small_chips': 'Small Chips',
+	'medium_chips': 'Medium Chips',
+	'large_chips': 'Large Chips',
+	'onion_rings_supreme':'Onion Rings Supreme',
+	'onion_rings_deluxe': 'Onion Rings Deluxe',
+	'ballybonion_super_box': 'BallybOnion Super Box',
+	'coke': 'Coke',
+	'water': 'Water',
+	'nutella_onion_rings': 'Nutella Onion Rings', 
+	'pistachio_onion_rings': 'Pistachio Onion Rings',
+}
 
 PRICES = {
 	'small_onion_rings': 3,
@@ -107,6 +122,7 @@ def main_menu():
     print("8. Finalise order")
     
     while True:
+        clear()
         menu_selection = input("Please input the number which corresponds with your selection\n")
         match (menu_selection):
             case '1':
@@ -135,6 +151,7 @@ def main_menu():
                 break
             case _:
                 print('Invalid selection, try again.')
+                time.sleep(2)
 
 def starters_menu():
     while True:
@@ -149,6 +166,7 @@ def starters_menu():
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
             print('Invalid selection, please try again')
+            time.sleep(2)
         else:
             match selection:
                 case '1': 
@@ -200,6 +218,7 @@ def sides_menu():
         menu_options = ['1', '2', '3', '4', '5']
         if selection not in menu_options:
             print('Invalid selection, please try again')
+            time.sleep(2)
         else:
             match selection:
                 case '1': 
@@ -329,6 +348,7 @@ def drinks_menu():
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
             print('Invalid selection, please try again')
+            time.sleep(2)
         else:
             match selection:
                 case '1': 
@@ -379,6 +399,7 @@ def desserts_menu():
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
             print('Invalid selection, please try again')
+            time.sleep(2)
         else:
             match selection:
                 case '1': 
@@ -435,7 +456,7 @@ def cancel_items():
         for index, (name, quantity) in enumerate(valid_items, start=1):
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{index}. Cancel {quantity} x {name}: €{subtotal}?')
+            print(f'{index}. Cancel {quantity} x {NAMES[name]}: €{subtotal}?')
         print(f'Total: €{total}')
         print('Please note that selecting an item will remove every portion of it from your order.')
         print('')
@@ -475,7 +496,7 @@ def remove_item(index):
         # Remove the item based on the adjusted index
         removed_item = items_list.pop(adjusted_index)
         del new_order.new_order[removed_item[0]]
-        print(f"Item '{removed_item[0]}' has been removed.")
+        print(f"Item '{NAMES[removed_item[0]]}' has been removed.")
         time.sleep(2)
         cancel_items()
     except IndexError:
@@ -546,7 +567,7 @@ def display_finalised_order():
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{quantity} x {name}: €{subtotal}')
+            print(f'{quantity} x {NAMES[name]}: €{subtotal}')
         print(f'Total: €{total}')
 
 
