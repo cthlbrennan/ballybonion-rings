@@ -166,7 +166,7 @@ def starters_menu():
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
-            print('Invalid selection, please try again')
+            print(f'"{selection}" is an invalid selection, please try again')
             time.sleep(2)
         else:
             match selection:
@@ -182,7 +182,8 @@ def starters_menu():
                             print(f'{ordered_quantity} x Small Onion Rings added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -195,7 +196,8 @@ def starters_menu():
                             print(f'{ordered_quantity} x Mozzarella Sticks added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '3':
                     main_menu()
                     break
@@ -203,7 +205,8 @@ def starters_menu():
                     finalise_order()
                     break
                 case _:
-                    print('Invalid input, please try again.')
+                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    time.sleep(2)
 
 def sides_menu():
     while True:
@@ -218,7 +221,7 @@ def sides_menu():
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4', '5']
         if selection not in menu_options:
-            print('Invalid selection, please try again')
+            print(f'"{selection}" is an invalid selection, please try again')
             time.sleep(2)
         else:
             match selection:
@@ -234,7 +237,8 @@ def sides_menu():
                             print(f'{ordered_quantity} x Small Chips added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -247,7 +251,8 @@ def sides_menu():
                             print(f'{ordered_quantity} x Medium Chips added to your order')
                             time.sleep(2)                            
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '3':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -260,7 +265,8 @@ def sides_menu():
                             print(f'{ordered_quantity} x Large Chips added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '4':
                     main_menu()
                     break
@@ -268,7 +274,8 @@ def sides_menu():
                     finalise_order()
                     break
                 case _:
-                    print('Invalid input, please try again.')
+                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    time.sleep(2)
 
 
 def mains_menu():
@@ -284,7 +291,7 @@ def mains_menu():
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4', '5']
         if selection not in menu_options:
-            print('Invalid selection, please try again')
+            print(f'"{selection}" is an invalid selection, please try again')
             time.sleep(2)
         else:
             match selection:
@@ -300,7 +307,8 @@ def mains_menu():
                             print(f'{ordered_quantity} x Onion Rings Supreme added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -313,7 +321,8 @@ def mains_menu():
                             print(f'{ordered_quantity} x Onion Rings Deluxe added to your order')
                             time.sleep(2)                            
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '3':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -326,7 +335,8 @@ def mains_menu():
                             print(f'{ordered_quantity} x BallybOnion Super Box added to your order')
                             time.sleep(2)                            
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '4':
                     main_menu()
                     break
@@ -334,7 +344,8 @@ def mains_menu():
                     finalise_order()
                     break
                 case _:
-                    print('Invalid input, please try again.')
+                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    time.sleep(2)
 
 def drinks_menu():
     while True:
@@ -348,7 +359,7 @@ def drinks_menu():
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
-            print('Invalid selection, please try again')
+            print(f'"{selection}" is an invalid selection, please try again')
             time.sleep(2)
         else:
             match selection:
@@ -364,7 +375,8 @@ def drinks_menu():
                             print(f'{ordered_quantity} x Coke added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -377,7 +389,8 @@ def drinks_menu():
                             print(f'{ordered_quantity} x Water added to your order')
                             time.sleep(2)                            
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '3':
                     main_menu()
                     break
@@ -385,7 +398,8 @@ def drinks_menu():
                     finalise_order()
                     break
                 case _:
-                    print('Invalid input, please try again.')
+                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    time.sleep(2)
 
 def desserts_menu():
     while True:
@@ -399,7 +413,7 @@ def desserts_menu():
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
-            print('Invalid selection, please try again')
+            print(f'"{selection}" is an invalid selection, please try again')
             time.sleep(2)
         else:
             match selection:
@@ -415,8 +429,8 @@ def desserts_menu():
                             print(f'{ordered_quantity} x Nutella Onion Rings added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print('Invalid input, try again.')
-
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
@@ -429,7 +443,8 @@ def desserts_menu():
                             print(f'{ordered_quantity} x Pistachio Onion Rings added to your order')
                             time.sleep(2)                            
                     except ValueError:
-                        print('Invalid input, try again.')
+                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        time.sleep(2)
                 case '3':
                     main_menu()
                     break
@@ -437,7 +452,8 @@ def desserts_menu():
                     finalise_order()
                     break
                 case _:
-                    print('Invalid input, please try again.')
+                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    time.sleep(2)
 
 # cancel items functionality based on code set out in https://www.geeksforgeeks.org/iterate-python-dictionary-using-enumerate-function/
 def cancel_items():
@@ -478,13 +494,8 @@ def cancel_items():
                 else:
                     print(f'{selection} is an invalid input.')
             except ValueError:
-                print(f"{selection} is an input. Please enter a number.")
-                
-        cancel_items()
-
-# Ensure remove_item function is defined to handle the removal logic
-
-            
+                print(f"{selection} is an invalid input. Please enter a number.")
+                        
 # remove item functionality based on code set out in https://www.geeksforgeeks.org/python-filter-non-none-dictionary-keys/
 def remove_item(index):
     # Adjust index for zero-based indexing
@@ -620,45 +631,46 @@ def process_payment():
     print('Processing Order...')
     time.sleep(0.3)
     clear()
-    pin = input('Please enter your four-digit bank card pin number that we will not record on our servers...')
-    match = re.match(pattern, pin)
-    if match:
-        clear()
-        print('Thank you')
-        time.sleep(1)
-        clear()
-        print('Processing Payment')
-        time.sleep(0.3)
-        clear()
-        print('Processing Payment.')
-        time.sleep(0.3)
-        clear()
-        print('Processing Payment..')
-        time.sleep(0.3)
-        clear()
-        print('Processing Payment...')
-        time.sleep(0.3)
-        clear()       
-        print('Processing Payment')
-        time.sleep(0.3)
-        clear()
-        print('Processing Payment.')
-        time.sleep(0.3)
-        clear()
-        print('Processing Payment..')
-        time.sleep(0.3)
-        clear()
-        print('Processing Payment...')
-        time.sleep(0.3)
-        clear()
-        print('Payment Approved.')
-        print('Thanks for your custom.')
-        time.sleep(2)
-        startscreen()  
-    else:
-        print(f"'{pin}' is not a valid four digit pin code, please try again.")
-        time.sleep(2)
-        process_payment()
+    while True:
+        pin = input('Please enter your four-digit bank card pin number that we will not record on our servers...')
+        match = re.match(pattern, pin)
+        if match:
+            clear()
+            print('Thank you')
+            time.sleep(1)
+            clear()
+            print('Processing Payment')
+            time.sleep(0.3)
+            clear()
+            print('Processing Payment.')
+            time.sleep(0.3)
+            clear()
+            print('Processing Payment..')
+            time.sleep(0.3)
+            clear()
+            print('Processing Payment...')
+            time.sleep(0.3)
+            clear()       
+            print('Processing Payment')
+            time.sleep(0.3)
+            clear()
+            print('Processing Payment.')
+            time.sleep(0.3)
+            clear()
+            print('Processing Payment..')
+            time.sleep(0.3)
+            clear()
+            print('Processing Payment...')
+            time.sleep(0.3)
+            clear()
+            print('Payment Approved.')
+            print('Thanks for your custom.')
+            time.sleep(2)
+            startscreen()
+            break
+        else:
+            print(f"'{pin}' is not a valid four digit pin code, please try again.")
+            time.sleep(2)
 
 
 
