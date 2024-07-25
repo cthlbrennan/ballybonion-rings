@@ -121,6 +121,7 @@ def main_menu():
     print("6. Display current order")    
     print("7. Cancel items from current order")
     print("8. Finalise order")
+    print("9. Cancel order")
     
     while True:
         menu_selection = input("Please input the number which corresponds with your selection\n")
@@ -148,11 +149,33 @@ def main_menu():
                 break
             case '8':
                 finalise_order()
+            case '9':
+                cancel_order()
                 break
             case _:
                 print(f'{menu_selection} is an invalid selection, please try again.')
                 time.sleep(2)
                 main_menu()
+
+def cancel_order():
+        while True:
+        clear()
+        print('Just pack it in and go home? y/n')
+        answer = input('\n')
+        if answer.lower() == 'y':
+            print("Fair enough, come back when you're not going to waste our time!") 
+            time.sleep(3)
+            reset_new_order()
+            startscreen()
+            break
+        elif answer.lower() == 'n':
+            print('Then get busy buying stuff please!')
+            time.sleep(3)
+            main_menu()
+            break
+        else:
+            print(f'{answer} is an invalid input. Try again, y/n')
+            time.sleep(2)
 
 def starters_menu():
     while True:
