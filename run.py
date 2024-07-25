@@ -24,17 +24,17 @@ NAMES = {
 }
 
 PRICES = {
-	'small_onion_rings': 3,
-	'mozzarella_sticks': 3,
-	'small_chips': 3,
+	'small_onion_rings': 3.00,
+	'mozzarella_sticks': 3.00,
+	'small_chips': 3.00,
 	'medium_chips': 3.50,
-	'large_chips': 4,
-	'onion_rings_supreme':6,
-	'onion_rings_deluxe':7,
-	'ballybonion_super_box': 10,
-	'coke':2,
-	'water':2,
-	'nutella_onion_rings':5, 
+	'large_chips': 4.00,
+	'onion_rings_supreme':6.00,
+	'onion_rings_deluxe':7.00,
+	'ballybonion_super_box': 10.00,
+	'coke':2.00,
+	'water':2.00,
+	'nutella_onion_rings':5.00, 
 	'pistachio_onion_rings':5.50,
 	}
 
@@ -473,8 +473,8 @@ def cancel_items():
         for index, (name, quantity) in enumerate(valid_items, start=1):
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{index}. Cancel {quantity} x {NAMES[name]}: €{subtotal}?')
-        print(f'Total: €{total}')
+            print(f'{index}. Cancel {quantity} x {NAMES[name]}: €{subtotal:.2f}?')
+        print(f'Total: €{total:.2f}')
         print('Please note that selecting an item will remove every portion of it from your order.')
         print('')
         print("Please select option")    
@@ -535,8 +535,8 @@ def display_order():
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{quantity} x {NAMES[name]}: €{subtotal}')
-        print(f'Total: €{total}')
+            print(f'{quantity} x {NAMES[name]}: €{subtotal:.2f}')
+        print(f'Total: €{total:.2f}')
         print('')
         print('1. Return to Main Menu')
         print('2. Cancel items')
@@ -601,8 +601,8 @@ def display_finalised_order():
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
-            print(f'{quantity} x {NAMES[name]}: €{subtotal}')
-        print(f'Total: €{total}')
+            print(f'{quantity} x {NAMES[name]}: €{subtotal:.2f}')
+        print(f'Total: €{total:.2f}')
 
 def process_payment():
     clear()
