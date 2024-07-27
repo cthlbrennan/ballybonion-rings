@@ -3,7 +3,9 @@ import time
 import os
 import sys
 import re
-
+import pyfiglet 
+  
+ 
 # The dictionaries NAMES and PRICES below are capitalised, as per the convention 
 # for denoting some variables as constants which should
 # not be changed 
@@ -67,8 +69,10 @@ class NewOrder:
 
 def startscreen():
     clear()
-    print("Welcome to BallybOnion Rings, Ballybunion's greatest purveyor of")
-    print("pun-based (or should we say pun-ion-based) fast foods!")
+    result = pyfiglet.figlet_format("Welcome to BallybOnion Rings", font = "bulbhead" ) 
+    print(result)
+    print("Ballybunion's greatest purveyor of pun-based")
+    print("(or should we say pun-ion-based) fast foods!")
     make_an_order = input("Would you like to make an order? y/n\n")
 
     if (make_an_order.lower() == 'y'):
@@ -112,6 +116,8 @@ def vacate_premises():
 
 def main_menu():
     clear()
+    display = pyfiglet.figlet_format("Main Menu", font = "bulbhead" )
+    print(display)
     print("Please select from one of the following sub menus:")
     print("1. Starters")
     print("2. Sides")
@@ -180,6 +186,8 @@ def cancel_order():
 def starters_menu():
     while True:
         clear()
+        display = pyfiglet.figlet_format("Starters", font = "bulbhead" )
+        print(display)
         print('Starters:')
         print('1. Small Onion Rings: €3')
         print('2. Mozzarella Sticks: €3')
@@ -240,6 +248,8 @@ def starters_menu():
 def sides_menu():
     while True:
         clear()
+        display = pyfiglet.figlet_format("Sides", font = "bulbhead" )
+        print(display)        
         print('Sides:')
         print('1. Small Chips: €3')
         print('2. Medium Chips: €3.50')
@@ -319,6 +329,8 @@ def sides_menu():
 def mains_menu():
     while True:
         clear()
+        display = pyfiglet.figlet_format("Mains", font = "bulbhead" )
+        print(display)        
         print('Mains:')
         print('1. Onion Rings Supreme: €6')
         print('2. Onion Rings Deluxe: €7')
@@ -396,6 +408,8 @@ def mains_menu():
 
 def drinks_menu():
     while True:
+        display = pyfiglet.figlet_format("Drinks", font = "bulbhead" )
+        print(display)        
         clear()
         print('Drinks:')
         print('1. Coke: €2')
@@ -457,6 +471,8 @@ def drinks_menu():
 def desserts_menu():
     while True:
         clear()
+        display = pyfiglet.figlet_format("Desserts", font = "bulbhead" )
+        print(display)        
         print('Desserts:')
         print('1. Nutella Onion Rings: €5')
         print('2. Pistachio Onion Rings: €5.50')
@@ -723,7 +739,9 @@ def process_payment():
             time.sleep(0.3)
             clear()
             print('Payment Approved.')
-            print('Thanks for your custom.')
+            print('')
+            display = pyfiglet.figlet_format("Thanks for your Custom", font = "bulbhead" )
+            print(display)
             time.sleep(2)
             reset_new_order()
             startscreen()
@@ -737,10 +755,7 @@ def reset_new_order():
         new_order.new_order[i] = None
 
 
-def main():
+if __name__ == "__main__":
+    clear()
     new_order = NewOrder()
     startscreen()
-
-new_order = NewOrder()
-startscreen()
-
