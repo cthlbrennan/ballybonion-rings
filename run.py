@@ -3,9 +3,10 @@ import time
 import os
 import sys
 import re
-import pyfiglet 
-  
- 
+#use of pyfiglet based on code found in https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
+import pyfiglet
+# use of colorama based on code found in https://www.geeksforgeeks.org/print-colors-python-terminal/
+from colorama import init, Fore, Back 
 # The dictionaries NAMES and PRICES below are capitalised, as per the convention 
 # for denoting some variables as constants which should
 # not be changed 
@@ -70,9 +71,9 @@ class NewOrder:
 def startscreen():
     clear()
     result = pyfiglet.figlet_format("Welcome to BallybOnion Rings", font = "bulbhead" ) 
-    print(result)
+    print(Fore.YELLOW + result)
     print("Ballybunion's greatest purveyor of pun-based")
-    print("(or should we say pun-ion-based) fast foods!")
+    print("(or should we say pun-ion-based) fast foods!" + Fore.RESET)
     make_an_order = input("Would you like to make an order? y/n\n")
 
     if (make_an_order.lower() == 'y'):
@@ -80,7 +81,7 @@ def startscreen():
     elif (make_an_order.lower() == 'n'):
         not_make_order()
     else:
-        print(f'{make_an_order} is invalid. Please input either y or n')
+        print(Fore.RED + f'{make_an_order} is invalid. Please input either y or n' + Fore.RESET)
         time.sleep(2)
         startscreen()
 
@@ -91,8 +92,8 @@ def clear():
 def not_make_order():
     clear()
     print("That's ok! Come back soon when you're not so poor and/or feckless!")
-    print('Please vacate the premises immediately or we will notify An Garda Síochana.')
-    answer = input('New customer? y/n\n')
+    print(Fore.RED + 'Please vacate the premises immediately or we will notify An Garda Síochana.' + Fore.RESET)
+    answer = input(Fore.GREEN + 'New customer? y/n\n' + Fore.RESET)
     while True:
         if (answer.lower() == 'y'):
             startscreen()
@@ -101,23 +102,23 @@ def not_make_order():
             vacate_premises()
             break
         else:
-            print(f'{answer} is an invalid input, please try again')
+            print(Fore.RED + f'{answer} is an invalid input, please try again' + Fore.RESET)
             time.sleep(1)
             not_make_order()
 
 def vacate_premises():
     clear()
-    print("This terminal has recorded a photographic image of you.")
+    print(Fore.RED + "This terminal has recorded a photographic image of you.")
     print("It will be relayed to An Garda Siochána and will be the basis for a")
     print("trespassing charge against you.")
-    print("Please remove yourself from the premises and allow the next customer to order.")
+    print("Please remove yourself from the premises and allow the next customer to order." + Fore.RESET)
     time.sleep(7)
     startscreen()
 
 def main_menu():
     clear()
     display = pyfiglet.figlet_format("Main Menu", font = "bulbhead" )
-    print(display)
+    print(Fore.YELLOW + display)
     print("Please select from one of the following sub menus:")
     print("1. Starters")
     print("2. Sides")
@@ -127,7 +128,7 @@ def main_menu():
     print("6. Display current order")    
     print("7. Cancel items from current order")
     print("8. Finalise order")
-    print("9. Cancel order")
+    print("9. Cancel order" + Fore.RESET)
     
     while True:
         menu_selection = input("Please input the number which corresponds with your selection\n")
@@ -159,45 +160,47 @@ def main_menu():
                 cancel_order()
                 break
             case _:
-                print(f'{menu_selection} is an invalid selection, please try again.')
+                print(Fore.RED + f'{menu_selection} is an invalid selection, please try again.' + Fore.RESET)
                 time.sleep(2)
                 main_menu()
 
 def cancel_order():
     while True:
         clear()
-        print('Just pack it in and go home? y/n')
+        print(Fore.BLUE + 'Just pack it in and go home? y/n' + Fore.RESET)
         answer = input('\n')
         if answer.lower() == 'y':
+            clear()
             print("Fair enough, come back when you're not going to waste our time!") 
             time.sleep(3)
             reset_new_order()
             startscreen()
             break
         elif answer.lower() == 'n':
+            clear()
             print('Then get busy buying stuff please!')
             time.sleep(3)
             main_menu()
             break
         else:
-            print(f'{answer} is an invalid input. Try again, y/n')
+            print(Fore.RED + f'{answer} is an invalid input. Try again, y/n' + Fore.RESET)
             time.sleep(2)
 
 def starters_menu():
     while True:
         clear()
         display = pyfiglet.figlet_format("Starters", font = "bulbhead" )
-        print(display)
+        print(Fore.YELLOW + display)
         print('Starters:')
         print('1. Small Onion Rings: €3')
         print('2. Mozzarella Sticks: €3')
         print('3. Return back to Main Menu')
-        print('4. Finalise your order')
+        print('4. Finalise your order' + Fore.RESET)
     
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
-            print(f'"{selection}" is an invalid selection, please try again')
+            print(Fore.RED + f'"{selection}" is an invalid selection, please try again' + Fore.RESET)
             time.sleep(2)
         else:
             match selection:
@@ -205,10 +208,10 @@ def starters_menu():
                     try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -216,16 +219,16 @@ def starters_menu():
                             print(f'{ordered_quantity} x Small Onion Rings added to your order')
                             time.sleep(2)                                     
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '2':
                     try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -233,7 +236,7 @@ def starters_menu():
                             print(f'{ordered_quantity} x Mozzarella Sticks added to your order')
                             time.sleep(2)   
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '3':
                     main_menu()
@@ -242,25 +245,25 @@ def starters_menu():
                     finalise_order()
                     break
                 case _:
-                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                     time.sleep(2)
 
 def sides_menu():
     while True:
         clear()
         display = pyfiglet.figlet_format("Sides", font = "bulbhead" )
-        print(display)        
+        print(Fore.YELLOW + display)
         print('Sides:')
         print('1. Small Chips: €3')
         print('2. Medium Chips: €3.50')
         print('3. Large Chips: €4')
         print('4. Return back to Main Menu')
-        print('5. Finalise your order')
+        print('5. Finalise your order' + Fore.RESET)
     
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4', '5']
         if selection not in menu_options:
-            print(f'"{selection}" is an invalid selection, please try again')
+            print(Fore.RED + f'"{selection}" is an invalid selection, please try again' + Fore.RESET)
             time.sleep(2)
         else:
             match selection:
@@ -268,10 +271,10 @@ def sides_menu():
                     try:
                         ordered_quantity = input('How many?\n')                        
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -279,16 +282,16 @@ def sides_menu():
                             print(f'{ordered_quantity} x Small Chips added to your order')
                             time.sleep(2)                              
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -296,16 +299,16 @@ def sides_menu():
                             print(f'{ordered_quantity} x Medium Chips added to your order')
                             time.sleep(2)                        
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '3':
                     try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -313,7 +316,7 @@ def sides_menu():
                             print(f'{ordered_quantity} x Large Chips added to your order')
                             time.sleep(2)           
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '4':
                     main_menu()
@@ -322,7 +325,7 @@ def sides_menu():
                     finalise_order()
                     break
                 case _:
-                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                     time.sleep(2)
 
 
@@ -330,18 +333,18 @@ def mains_menu():
     while True:
         clear()
         display = pyfiglet.figlet_format("Mains", font = "bulbhead" )
-        print(display)        
+        print(Fore.YELLOW + display)
         print('Mains:')
         print('1. Onion Rings Supreme: €6')
         print('2. Onion Rings Deluxe: €7')
         print('3. BallybOnion Super Box: €10')
         print('4. Return back to Main Menu')
-        print('5. Finalise your order')
+        print('5. Finalise your order' + Fore.RESET)
     
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4', '5']
         if selection not in menu_options:
-            print(f'"{selection}" is an invalid selection, please try again')
+            print(Fore.RED + f'"{selection}" is an invalid selection, please try again' + Fore.RESET)
             time.sleep(2)
         else:
             match selection:
@@ -349,10 +352,10 @@ def mains_menu():
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  # Make sure to call isdigit()
                             ordered_quantity = int(ordered_quantity)
@@ -360,16 +363,16 @@ def mains_menu():
                             print(f'{ordered_quantity} x Onion Rings Supreme added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '2':
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -377,16 +380,16 @@ def mains_menu():
                             print(f'{ordered_quantity} x Onion Rings Deluxe added to your order')
                             time.sleep(2)
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '3':
                     try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -394,7 +397,7 @@ def mains_menu():
                             print(f'{ordered_quantity} x BallybOnion Super Box added to your order')
                             time.sleep(2)                             
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '4':
                     main_menu()
@@ -403,24 +406,24 @@ def mains_menu():
                     finalise_order()
                     break
                 case _:
-                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                     time.sleep(2)
 
 def drinks_menu():
     while True:
-        display = pyfiglet.figlet_format("Drinks", font = "bulbhead" )
-        print(display)        
         clear()
+        display = pyfiglet.figlet_format("Drinks", font = "bulbhead" )
+        print(Fore.YELLOW + display)
         print('Drinks:')
         print('1. Coke: €2')
         print('2. Water: €2')
         print('3. Return back to Main Menu')
-        print('4. Finalise your order')
+        print('4. Finalise your order' + Fore.RESET)
     
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
-            print(f'"{selection}" is an invalid selection, please try again')
+            print(Fore.RED + f'"{selection}" is an invalid selection, please try again' + Fore.RESET)
             time.sleep(2)
         else:
             match selection:
@@ -428,10 +431,10 @@ def drinks_menu():
                     try:            
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -439,16 +442,16 @@ def drinks_menu():
                             print(f'{ordered_quantity} x Coke added to your order')
                             time.sleep(2)  
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '2':
                     try:
                         ordered_quantity = input('How many?\n')                                                
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -456,7 +459,7 @@ def drinks_menu():
                             print(f'{ordered_quantity} x Water added to your order')
                             time.sleep(2)                                    
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '3':
                     main_menu()
@@ -465,24 +468,24 @@ def drinks_menu():
                     finalise_order()
                     break
                 case _:
-                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                     time.sleep(2)
 
 def desserts_menu():
     while True:
         clear()
         display = pyfiglet.figlet_format("Desserts", font = "bulbhead" )
-        print(display)        
+        print(Fore.YELLOW + display)
         print('Desserts:')
         print('1. Nutella Onion Rings: €5')
         print('2. Pistachio Onion Rings: €5.50')
         print('3. Return back to Main Menu')
-        print('4. Finalise your order')
+        print('4. Finalise your order' + Fore.RESET)
     
         selection = input('Please select from the options above\n')
         menu_options = ['1', '2', '3', '4']
         if selection not in menu_options:
-            print(f'"{selection}" is an invalid selection, please try again')
+            print(Fore.RED + f'"{selection}" is an invalid selection, please try again' + Fore.RESET)
             time.sleep(2)
         else:
             match selection:
@@ -490,10 +493,10 @@ def desserts_menu():
                     try:
                         ordered_quantity = input('How many?\n')                                                
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -501,16 +504,16 @@ def desserts_menu():
                             print(f'{ordered_quantity} x Nutella Onion Rings added to your order')
                             time.sleep(2)           
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '2':
                     try:
                         ordered_quantity = input('How many?\n')                        
                         if ordered_quantity == '0':
-                            print(f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: You must order at least 1 item to add it to your order.' + Fore.RESET)
                             time.sleep(2)
                         elif int(ordered_quantity) < 0:
-                            print(f'You entered {ordered_quantity}: This is an invalid input, please try again.')
+                            print(Fore.RED + f'You entered {ordered_quantity}: This is an invalid input, please try again.' + Fore.RESET)
                             time.sleep(2)
                         elif ordered_quantity.isdigit():  
                             ordered_quantity = int(ordered_quantity)
@@ -518,7 +521,7 @@ def desserts_menu():
                             print(f'{ordered_quantity} x Pistachio Onion Rings added to your order')
                             time.sleep(2) 
                     except ValueError:
-                        print(f'"{ordered_quantity}" is an invalid input, try again.')
+                        print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                         time.sleep(2)
                 case '3':
                     main_menu()
@@ -527,7 +530,7 @@ def desserts_menu():
                     finalise_order()
                     break
                 case _:
-                    print(f'"{ordered_quantity}" is an invalid input, try again.')
+                    print(Fore.RED + f'"{ordered_quantity}" is an invalid input, try again.' + Fore.RESET)
                     time.sleep(2)
 
 # cancel items functionality based on code set out in https://www.geeksforgeeks.org/iterate-python-dictionary-using-enumerate-function/
@@ -550,7 +553,7 @@ def cancel_items():
             total += subtotal 
             print(f'{index}. Cancel {quantity} x {NAMES[name]}: €{subtotal:.2f}?')
         print(f'Total: €{total:.2f}')
-        print('Please note that selecting an item will remove every portion of it from your order.')
+        print(Fore.RED + 'Please note that selecting an item will remove every portion of it from your order.' + Fore.RESET)
         print('')
         print("Please select option")    
         while True:
@@ -567,9 +570,9 @@ def cancel_items():
                         main_menu()
                         break
                 else:
-                    print(f'{selection} is an invalid input.')
+                    print(Fore.RED + f'{selection} is an invalid input.' + Fore.RESET)
             except ValueError:
-                print(f"{selection} is an invalid input. Please enter a number.")
+                print(Fore.RED + f"{selection} is an invalid input. Please enter a number." + Fore.RESET)
                         
 # remove item functionality based on code set out in https://www.geeksforgeeks.org/python-filter-non-none-dictionary-keys/
 def remove_item(index):
@@ -583,11 +586,11 @@ def remove_item(index):
         # Remove the item based on the adjusted index
         removed_item = items_list.pop(adjusted_index)
         del new_order.new_order[removed_item[0]]
-        print(f"Item '{NAMES[removed_item[0]]}' has been removed.")
+        print(Fore.MAGENTA + f"Item '{NAMES[removed_item[0]]}' has been removed." + Fore.RESET)
         time.sleep(2)
         cancel_items()
     except IndexError:
-        print("Invalid selection. Please choose a valid index.")
+        print(Fore.RED + "Invalid selection. Please choose a valid index." + Fore.RESET)
         time.sleep(2)
         cancel_items()
 
@@ -605,13 +608,13 @@ def display_order():
         time.sleep(2)
         main_menu()
     else:
-        print('Your Order:')
+        print(Fore.YELLOW + 'Your Order:')
         print('')
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
             print(f'{quantity} x {NAMES[name]}: €{subtotal:.2f}')
-        print(f'Total: €{total:.2f}')
+        print(f'Total: €{total:.2f}' + Fore.RESET)
         print('')
         print('1. Return to Main Menu')
         print('2. Cancel items')
@@ -619,7 +622,7 @@ def display_order():
         while True:
             answer = input('Please make selection\n')
             if answer not in ['1', '2', '3']:
-                print(f'{answer} is not a valid input, please try again')
+                print(Fore.RED + f'{answer} is not a valid input, please try again' + Fore.RESET)
             else:
                 match (answer):
                     case '1':
@@ -639,11 +642,11 @@ def finalise_order():
     print('')
     print('1. Return to Main Menu')
     print('2. Cancel items from order')
-    print('3. Proceed to Payment')
+    print(Fore.GREEN + '3. Proceed to Payment' + Fore.RESET)
     while True:
             answer = input('Please make selection\n')
             if answer not in ['1', '2', '3']:
-                print(f'{answer} is not a valid input, please try again')
+                print(Fore.RED + f'{answer} is not a valid input, please try again' + Fore.RESET)
                 time.sleep(2)
                 finalise_order()
             else:
@@ -671,18 +674,18 @@ def display_finalised_order():
         time.sleep(2)
         main_menu()
     else:
-        print('Your Finalised Order:')
+        print(Fore.YELLOW + 'Your Finalised Order:')
         print('')
         for name, quantity in current_order:
             subtotal = (quantity * PRICES[name])
             total += subtotal 
             print(f'{quantity} x {NAMES[name]}: €{subtotal:.2f}')
-        print(f'Total: €{total:.2f}')
+        print(f'Total: €{total:.2f}' + Fore.RESET)
 
 def process_payment():
     clear()
     pattern = r'^[0-9]{4}$'
-    print('Processing Order')
+    print(Fore.BLUE + 'Processing Order')
     time.sleep(0.3)
     clear()
     print('Processing Order.')
@@ -703,7 +706,7 @@ def process_payment():
     print('Processing Order..')
     time.sleep(0.3)
     clear()
-    print('Processing Order...')
+    print('Processing Order...' + Fore.RESET)
     time.sleep(0.3)
     clear()
     while True:
@@ -711,7 +714,7 @@ def process_payment():
         match = re.match(pattern, pin)
         if match:
             clear()
-            print('Thank you')
+            print(Fore.GREEN + 'Thank you' + Fore.RESET)
             time.sleep(1)
             clear()
             print('Processing Payment')
@@ -740,14 +743,17 @@ def process_payment():
             clear()
             print('Payment Approved.')
             print('')
+            time.sleep(0.3)
+            clear()
             display = pyfiglet.figlet_format("Thanks for your Custom", font = "bulbhead" )
-            print(display)
-            time.sleep(2)
+            print(Fore.YELLOW + display + Fore.RESET)
+            print('Now please remove yourself from the premises!')
+            time.sleep(3)
             reset_new_order()
             startscreen()
             break
         else:
-            print(f"'{pin}' is not a valid four digit pin code, please try again.")
+            print(Fore.RED + f"'{pin}' is not a valid four digit pin code, please try again." + Fore.RESET)
             time.sleep(2)
 
 def reset_new_order():
@@ -757,5 +763,6 @@ def reset_new_order():
 
 if __name__ == "__main__":
     clear()
+    init() 
     new_order = NewOrder()
     startscreen()
