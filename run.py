@@ -158,7 +158,7 @@ def main_menu():
                 main_menu()
 
 def cancel_order():
-        while True:
+    while True:
         clear()
         print('Just pack it in and go home? y/n')
         answer = input('\n')
