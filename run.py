@@ -1197,6 +1197,7 @@ def process_payment():
                 )
             print(Fore.YELLOW + display + Fore.RESET)
             print("Now please remove yourself from the premises!")
+            print("Now please remove yourself from the premises!")
             time.sleep(6)
             reset_new_order()
             startscreen()
