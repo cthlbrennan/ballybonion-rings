@@ -1035,6 +1035,8 @@ def display_order():
                     + f"{answer} is not a valid input, please try again"
                     + Fore.RESET
                 )
+                time.sleep(2)
+                display_order()
             else:
                 match (answer):
                     case "1":
