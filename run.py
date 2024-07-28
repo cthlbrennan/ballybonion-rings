@@ -298,10 +298,13 @@ def starters_menu():
                                 "small_onion_rings",
                                 ordered_quantity
                                 )
-                            print(
-                                f"{ordered_quantity} x Small Onion Rings"
-                                + " added to your order"
-                            )
+                            if new_order.new_order['small_onion_rings'] is not None:
+                                print(
+                                    f"{ordered_quantity} x Small Onion Rings"
+                                    + " added to your order"
+                                    )
+                            else:
+                                print('Failed to add small onion rings to your order')
                             time.sleep(2)
                     except ValueError:
                         print(
