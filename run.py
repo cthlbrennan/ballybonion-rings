@@ -227,7 +227,7 @@ def cancel_order():
         if answer.lower() == "y":
             clear()
             print("Fair enough, come back when you're")
-            print(" not going to waste our time!")
+            print("not going to waste our time!")
             time.sleep(3)
             reset_new_order()
             startscreen()
@@ -940,7 +940,13 @@ def cancel_items():
         print("Please select option")
         while True:
             try:
-                selection = int(input("\n"))
+                selection = input("\n")
+                if selection.isdigit() == False:
+                    print(f'{selection} is an invalid option, please try again.')
+                    time.sleep(2)
+                    cancel_items()
+                elif selection.isdigit() == True:
+                    selection = int(selection)
                 if selection == 0:
                     main_menu()
                     break
@@ -961,6 +967,8 @@ def cancel_items():
                         + f"{selection} is an invalid input."
                         + Fore.RESET
                         )
+                    time.sleep(2)
+                    cancel_items()
             except ValueError:
                 print(
                     Fore.RED
