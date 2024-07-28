@@ -1,15 +1,19 @@
 # import time for sleep method
 import time
+# import os and sys for self-defined clear function
 import os
 import sys
+# import regular expressions module for re.match() method for payment process - 
+# based on Harvard's CS50P course - https://www.youtube.com/watch?v=hy3sd9MOAcc&t=1s
 import re
-#use of pyfiglet based on code found in https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
+# use of pyfiglet based on code found in https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
 import pyfiglet
 # use of colorama based on code found in https://www.geeksforgeeks.org/print-colors-python-terminal/
 from colorama import init, Fore, Back 
+
 # The dictionaries NAMES and PRICES below are capitalised, as per the convention 
-# for denoting some variables as constants which should
-# not be changed 
+# for denoting variables as constants which should
+# not be changed - https://peps.python.org/pep-0008/#constants 
 
 NAMES = {
     'small_onion_rings': 'Small Onion Rings',
@@ -59,6 +63,8 @@ class NewOrder:
 	}
 
     def add_item(self, item, quantity):
+        '''this method adds a number of a selected menu item to the 
+        new_order instance variable's dictionary'''
         if (item in self.new_order and self.new_order[item] == None):
             self.new_order[item] = quantity
         elif (item in self.new_order and self.new_order[item] != None):
@@ -69,6 +75,7 @@ class NewOrder:
             print(f"Item '{item}' not found.")
 
 def startscreen():
+    '''this function brings up the welcome screen'''
     clear()
     result = pyfiglet.figlet_format("Welcome to BallybOnion Rings", font = "bulbhead" ) 
     print(Fore.YELLOW + result)
@@ -87,9 +94,12 @@ def startscreen():
 
 # code based on https://www.geeksforgeeks.org/clear-screen-python/
 def clear():
+    '''this function clears text on the terminal'''
     os.system("cls" if os.name == "nt" else "clear")
 
 def not_make_order():
+    '''if a customer at the welcome screen decides not to make an order, 
+    this is the screen which they are sent to'''
     clear()
     print("That's ok! Come back soon when you're not so poor and/or feckless!")
     print(Fore.RED + 'Please vacate the premises immediately or we will notify An Garda Síochana.' + Fore.RESET)
@@ -107,6 +117,7 @@ def not_make_order():
             not_make_order()
 
 def vacate_premises():
+    '''this function threatens an awkward non-customer with legal action'''
     clear()
     print(Fore.RED + "This terminal has recorded a photographic image of you.")
     print("It will be relayed to An Garda Siochána and will be the basis for a")
@@ -116,6 +127,7 @@ def vacate_premises():
     startscreen()
 
 def main_menu():
+    '''This brings up the main menu, with various options from sub menus to cancellations to finalising an order'''
     clear()
     display = pyfiglet.figlet_format("Main Menu", font = "bulbhead" )
     print(Fore.YELLOW + display)
@@ -131,6 +143,7 @@ def main_menu():
     print("9. Cancel order" + Fore.RESET)
     
     while True:
+        # use of match cases based on https://www.youtube.com/watch?v=_b6NgY_pMdw
         menu_selection = input("Please input the number which corresponds with your selection\n")
         match (menu_selection):
             case '1':
@@ -165,6 +178,7 @@ def main_menu():
                 main_menu()
 
 def cancel_order():
+    '''this code represents the cancel order selection from the main menu'''
     while True:
         clear()
         print(Fore.BLUE + 'Just pack it in and go home? y/n' + Fore.RESET)
@@ -187,6 +201,7 @@ def cancel_order():
             time.sleep(2)
 
 def starters_menu():
+    '''the starters menu as selected from the main menu'''
     while True:
         clear()
         display = pyfiglet.figlet_format("Starters", font = "bulbhead" )
@@ -205,6 +220,7 @@ def starters_menu():
         else:
             match selection:
                 case '1': 
+                    #use of try and except keywords based on Code Institute Python Essentials module
                     try:
                         ordered_quantity = input('How many?\n')
                         if ordered_quantity == '0':
@@ -249,6 +265,7 @@ def starters_menu():
                     time.sleep(2)
 
 def sides_menu():
+    '''the sides menu as selected from the main menu'''
     while True:
         clear()
         display = pyfiglet.figlet_format("Sides", font = "bulbhead" )
@@ -330,6 +347,7 @@ def sides_menu():
 
 
 def mains_menu():
+    '''the mains menu as selected from the main menu'''
     while True:
         clear()
         display = pyfiglet.figlet_format("Mains", font = "bulbhead" )
@@ -410,6 +428,7 @@ def mains_menu():
                     time.sleep(2)
 
 def drinks_menu():
+    '''the drinks menu as selected from the main menu'''
     while True:
         clear()
         display = pyfiglet.figlet_format("Drinks", font = "bulbhead" )
@@ -472,6 +491,7 @@ def drinks_menu():
                     time.sleep(2)
 
 def desserts_menu():
+    '''the desserts menu as selected from the main menu'''
     while True:
         clear()
         display = pyfiglet.figlet_format("Desserts", font = "bulbhead" )
@@ -535,6 +555,7 @@ def desserts_menu():
 
 # cancel items functionality based on code set out in https://www.geeksforgeeks.org/iterate-python-dictionary-using-enumerate-function/
 def cancel_items():
+    '''the functionality within the cancel items sub menu to remove individual items from an order'''
     clear()
     valid_items = []
     total = 0
@@ -576,10 +597,11 @@ def cancel_items():
                         
 # remove item functionality based on code set out in https://www.geeksforgeeks.org/python-filter-non-none-dictionary-keys/
 def remove_item(index):
-    # Adjust index for zero-based indexing
+    '''function used in cancel_items() to remove an item from an order'''
+    # adjust index for zero-based indexing
     adjusted_index = index - 1
     
-    # Filter out None values and convert dictionary items to a list
+    # list comprehension based on https://www.w3schools.com/python/python_lists_comprehension.asp
     items_list = [(k, v) for k, v in new_order.new_order.items() if v is not None]
     
     try:
@@ -596,6 +618,7 @@ def remove_item(index):
 
 
 def display_order():
+    '''functionality for display order sub menu'''
     clear()
     current_order = []
     total = 0
@@ -636,6 +659,7 @@ def display_order():
                         break
 
 def finalise_order():
+    '''functionality for finalise order sub menu'''
     display_finalised_order()
     print('')
     print('This is your order. Would you like to make any changes before submitting it?')
@@ -662,6 +686,7 @@ def finalise_order():
                         break
 
 def display_finalised_order():
+    '''function used as part of finalise_order()'''
     clear()
     current_order = []
     total = 0
@@ -683,6 +708,7 @@ def display_finalised_order():
         print(f'Total: €{total:.2f}' + Fore.RESET)
 
 def process_payment():
+    '''functionality for when user selects Proceed to Payment from Finalise Order menu'''
     clear()
     pattern = r'^[0-9]{4}$'
     print(Fore.BLUE + 'Processing Order')
@@ -710,6 +736,7 @@ def process_payment():
     time.sleep(0.3)
     clear()
     while True:
+        # as stated above, code below based on CS50P's lecture on regex
         pin = input('Please enter your four-digit bank card pin number that we will not record...\n')
         match = re.match(pattern, pin)
         if match:
@@ -743,7 +770,7 @@ def process_payment():
             clear()
             print(Fore.GREEN + 'Payment Approved.' + Fore.RESET)
             print('')
-            time.sleep(0.3)
+            time.sleep(2)
             clear()
             display = pyfiglet.figlet_format("Thanks for your Custom", font = "bulbhead" )
             print(Fore.YELLOW + display + Fore.RESET)
@@ -757,10 +784,11 @@ def process_payment():
             time.sleep(2)
 
 def reset_new_order():
+    '''within dictionary of NewOrder object instance, every value is set to None ahead of a new order from a new user'''
     for i in new_order.new_order:
         new_order.new_order[i] = None
 
-
+# code below is based on best practice for command line applications that import modules https://stackoverflow.com/questions/419163/what-does-if-name-main-do 
 if __name__ == "__main__":
     clear()
     init() 
