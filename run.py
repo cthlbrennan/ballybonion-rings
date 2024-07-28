@@ -1,6 +1,9 @@
 # import time for sleep method
 import time
 
+# random module to generate random order number for customer at end of order
+import random
+
 # import os and sys for self-defined clear function
 import os
 import sys
@@ -1196,9 +1199,26 @@ def process_payment():
                 font="bulbhead"
                 )
             print(Fore.YELLOW + display + Fore.RESET)
-            print("Now please remove yourself from the premises!")
-            print("Now please remove yourself from the premises!")
-            time.sleep(6)
+            order_number = random_number()
+            print(
+                Fore.YELLOW
+                + "Your order number is " 
+                + Fore.RESET
+                + Fore.RED
+                + str(order_number)
+                + Fore.RESET
+                )
+            print(
+                Fore.YELLOW
+                + "Please collect your order from the desk "
+                + "when your number is called."
+                )
+            print(
+                "Once you have your stuff, please remove" 
+                + " yourself from the premises!"
+                + Fore.RESET
+                )
+            time.sleep(8)
             reset_new_order()
             startscreen()
             break
@@ -1211,6 +1231,13 @@ def process_payment():
             )
             time.sleep(2)
             clear()
+
+
+def random_number():
+    '''function to generate a 4 digit 
+    random integer for the process payment function'''
+    random_number = random.randint(1000, 9999)
+    return random_number
 
 
 def reset_new_order():
