@@ -1209,6 +1209,7 @@ def process_payment():
                 + Fore.RESET
             )
             time.sleep(2)
+            clear()
 
 
 def reset_new_order():
