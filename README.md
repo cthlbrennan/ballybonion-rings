@@ -43,7 +43,7 @@ The button at the top of the site reloads the page and restarts the application.
 
 ![Social Media Links in Footer](documentation/features/features-three.png)
 
-Two functional links can be accessed by clicking the two Font Awesome-sourced icons within the footer. The icons are stylised to match the colour scheme of the site. 
+Two functional links can be accessed by clicking the two Font Awesome-sourced icons within the footer. The icons are stylised to match the colour scheme of the site. The links open in new tabs, leaving the application browser tab open. 
 
 #### Browser Tab Title
 
@@ -65,215 +65,86 @@ Pyfiglet is used throughout the application to add interest to the aesthetic of 
 
 #### Text Colouring
 
-![Text Styling](documentation/features/features-seven.png)
+![Text Colouring](documentation/features/features-seven.png)
 
 Colorama is used throughout the application to add variety and emphasis to the text as appropriate.  
 
 #### Main Menu
 
-![Text Styling](documentation/features/features-eight.png)
+![Main](documentation/features/features-eight.png)
 
 A main menu screen orients the user within the application. 
 
-#### Main Menu
+#### Starters Menu
 
-![Text Styling](documentation/features/features-eight.png)
+![Starters Menu](documentation/features/features-nine.png)
 
-A main menu screen orients the user within the application. 
+The starters menu allows the user to add starters to their order, return to the main menu or proceed directly to finalise their order. 
 
-#### Main Menu
+#### Sides, Mains, Drinks and Desserts Menu
 
-![Text Styling](documentation/features/features-eight.png)
+Similar menus also exist for sides, mains, drinks and desserts.
 
-A main menu screen orients the user within the application. 
+![Sides Menu](documentation/features/features-ten.png)
 
-#### Main Menu
+![Mains Menu](documentation/features/features-eleven.png)
 
-![Text Styling](documentation/features/features-eight.png)
+![Drinks Menu](documentation/features/features-twelve.png)
 
-A main menu screen orients the user within the application. 
+![Desserts Menu](documentation/features/features-thirteen.png)
 
-#### Main Menu
+#### Display Order Menu
 
-![Text Styling](documentation/features/features-eight.png)
+![Display Order Menu](documentation/features/features-fourteen.png)
 
-A main menu screen orients the user within the application. 
+Pressing 6 on the main menu screen will bring the user to the Display Order Menu. 
 
-#### Main Menu
+![Returning to Main Menu Screen](documentation/features/features-fourteen-b.png)
 
-![Text Styling](documentation/features/features-eight.png)
+If the user has nothing ordered, the above message will appear for two seconds and then the user will be reverted back to the main menu. This functionality also exists for the Cancel Items and Finalise Order menus discussed below.
 
-A main menu screen orients the user within the application. 
+#### Cancel Items Menu
 
-#### Main Menu
+![Cancel Items Menu](documentation/features/features-fifteen.png)
 
-![Text Styling](documentation/features/features-eight.png)
+Pressing 7 on the main menu sends the user to this menu where they can remove items from their order. 
 
-A main menu screen orients the user within the application. 
+#### Finalise Order Menu
 
-#### Main Menu
+![Finalise Order](documentation/features/features-sixteen.png)
 
-![Text Styling](documentation/features/features-eight.png)
+Pressing 8 on the main menu screen sends the user to this menu, where they can see they're order and decide whether or not to return to the main menu, cancel items or proceed to payment.
 
-A main menu screen orients the user within the application. 
+#### Cancel Order
 
-#### Main Menu
+![Cancel Order](documentation/features/features-seventeen.gif)
 
-![Text Styling](documentation/features/features-eight.png)
+If the user wants to cancel their order altogether, they can press 9 on the main menu screen. If they type 'y', they're shown a brief 'come again soon' style message and the user is sent back to the Welcome Screen. If they type 'n', they're sent back to the Main Menu. 
 
-A main menu screen orients the user within the application. 
+#### Proceed to Payment
 
-#### Main Menu
+![Proceed to Payment](documentation/features/features-eighteen.gif)
 
-![Text Styling](documentation/features/features-eight.png)
-
-A main menu screen orients the user within the application. 
-
-
-
-
-
-
-#### Start Button
-
-![Start Button](documentation/features/start-button.gif)
-
-Clicking the Start Button starts the game. 
-
-#### How to Play Button and Return Buttons
-
-![How to Play and Return Buttons](documentation/features/how-to-play-button.gif)
-
-Clicking the How to Play button makes a box pop up which shows the rules of the game. A Return button allows the user to return back to the main menu. 
-
-#### Favicon
-
-![Favicon](documentation/features/favicon.png)
-
-The pages of the website have a favicon of the cross from the animation loop on the main menu/landing page. 
-
-#### Footer and Social Media Link
-
-![Social Media Link and Footer](documentation/features/social-media-link.png)
-
-The footer is present on the main page and the 404 page. It constantly remains at the bottom of the webpage at all times. It contains a social media link that opens up in a new tab. 
-
-#### 404 Page
-
-![404 Page](documentation/features/error-page.png)
-
-If there is a 404 error, the user will be sent to the 404 page. This page features an illustration of the priest player character, with a Return to Main Menu button which provides a link back to index.html.  
-
-#### Opening Sequence
-
-![Opening Sequence](documentation/features/opening-sequence.gif)
-
-Upon clicking the Start button on the main page, an opening animation with first-person narration from the perspective of the priest player character commences. 
-
-#### Continue Button
-
-![Continue Button](documentation/features/continue-button.png)
-
-After the opening sequence and between typing rounds, the Continue button allows the user to interact with the website and progress to the next part of the game and story.
-
-#### Prayer Display, Player Input and Timer
-
-![Prayer Display, Player Input and Timer](documentation/features/prayer-display-player-input.gif)
-
-The main gameplay mechanic is facilitated through these three boxes, which appear once a typing round begins. The player is must type what is shown in the Prayer Display area in the Player Input area. If the input is correct, the corresponding character in the Prayer Display area turns green in colour. If the input is incorrect, the corresponding character turns red. The correct input must be put into the Player Input area before the timer counts down from ten to zero, or the player will lose the game.
-
-Under the hood, the game inserts one of 20 Latin phrases into the Prayer Display Area. This ensures replayability and that the player won't play the same game twice.
-
-#### Reactive Enemy Animation Display
-
-![Enemy Animation Display](documentation/features/enemy-animation-display.gif)
-
-Each typing round is characterised by a section which displays enemy intro, fight, and defeat animations.
-
-![Reactive Enemy Animation Display](documentation/features/enemy-animation-display-reactive.gif)
-
-Upon clicking the Next button, the animation display reacts and changes. The animation also changes from the respective enemy's fight animation to their defeat animation once the user correctly types out the Latin phrase before the timer runs out.
-
-#### Lose State
-
-![Lose State](documentation/features/lose-state.gif)
-
-If the player fails to enter the prayer before the timer runs out, a box appears stating "You lose! Try again". Upon clicking the red "Retry" button, the player is returned to the main menu. 
-
-#### Closing Animation and Return to Main Menu Button
-
-![Closing Animation and Return to Main Menu Button](documentation/features/closing-sequence-return-to-main-menu.gif)
-
-If the player completes all three rounds successfully, they will the closing sequence and see the end of the story. Once the final animation is playing, a button will appear providing access back to the main menu. 
+From the Finalise Order Menu, the user can type 3 to proceed to make a payment. The elipses animations emulate the real-world lag that accompanies card payments. The user is asked to input a four number pin code (any four single-digit numbers between 0 and 9). Upon inputting this code, the user is thanked for their custom, given a randomly-generated four-digit collection number for collecting their food from the counter, and then the user is sent back to the Welcome Menu. 
 
 ### Future Features
 
 - Favicon
-    - Couldn't do it this time, would like to add .svg image of an onion ring in the future.
-
-- Audio
-    - Originally, an interactive audio component was to be included. However, it was too much work within the timeframe of the project. Intro and outro music, fight music, and transition chimes between scenes will be needed for a truly immersive experience. 
-- Health System
-    - Instead of a round per enemy, it would be better if there were multiple rounds per enemy. If the player failed to enter the text in time, they would lose one heart out of a maximum of three; upon winning a round, the player would recover some health before moving onto the next round.
-- Increasing difficulty
-  - The length of the phrases to be typed and the amount of available time will become more challenging as the levels progress. 
-- Larger RPG World
-  - Using a web library such as phaser.js or three.js, a top-down RPG style environment could be created in which the player character could freely move about. Typing rounds could be triggered in the same manner as turn-based battles in RPG video games like Final Fantasy, Pokemon, etc. 
-- Improved Art
-  - ... and more of it - more animations, more detail, more characters. 
+    - I was not able to add a favicon. From looking at Stack Overflow, it appears that this is a common issue when deploying apps through Heroku. In the future I will add this feature.
+- Removing specific quantity of item
+    - At the moment, the user can remove items from their order from the Cancel Items menu, however they can only remove all of a single item. If they have two BallybOnion Super Boxes ordered, for example, and they only wanted one, then they would have to cancel both boxes, then add another one afterwards. In the future, this will be amended so that users can be more precise in how many portions of an item they want to remove from their order. 
 
 ## Tools & Technologies Used
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- ⚠️⚠️ REQUIRED <-- delete me ⚠️⚠️
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
-- ⚠️⚠️ CHOOSE ONLY ONE <-- delete me ⚠️⚠️
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
-- [![Codeanywhere](https://img.shields.io/badge/Codeanywhere-grey?logo=ebox&logoColor=7F3F98)](https://codeanywhere.com) used as a cloud-based IDE for development.
-- [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=visualstudiocode&logoColor=007ACC)](https://code.visualstudio.com) used as my local IDE for development.
-- ⚠️⚠️ CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
 - [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) used for user interaction on the site.
-- [![jQuery](https://img.shields.io/badge/jQuery-grey?logo=jquery&logoColor=0769AD)](https://jquery.com) used for user interaction on the site.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
-- ⚠️⚠️ CHOOSE ONLY ONE <-- delete me ⚠️⚠️
-- [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
-- ⚠️⚠️ CHOOSE ONLY ONE (if applicable) <-- delete me ⚠️⚠️
-- [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [![Materialize](https://img.shields.io/badge/Materialize-grey?logo=materialdesign&logoColor=F5A5A8)](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- ⚠️⚠️ CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
-- [![Google Sheets](https://img.shields.io/badge/Google_Sheets-grey?logo=googlesheets&logoColor=34A853)](https://docs.google.com/spreadsheets) used for storing data from my Python app.
-- [![Jest](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) used for automated JavaScript testing.
-- [![Flask](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=000000)](https://flask.palletsprojects.com) used as the Python framework for the site.
-- [![MongoDB](https://img.shields.io/badge/MongoDB-grey?logo=mongodb&logoColor=47A248)](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-grey?logo=sqlalchemy&logoColor=D71F00)](https://www.sqlalchemy.org) used as the relational database management with Flask.
-- [![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) used as the Python framework for the site.
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) used as the relational database management.
-- [![PostgreSQL by Code Institute](https://img.shields.io/badge/PostgreSQL_by_Code_Institute-grey?logo=okta&logoColor=F05223)](https://dbs.ci-dbs.net) used as the Postgres database from Code Institute.
-- [![ElephantSQL](https://img.shields.io/badge/ElephantSQL-grey?logo=postgresql&logoColor=36A6E2)](https://www.elephantsql.com) used as the Postgres database.
-- [![Cloudinary](https://img.shields.io/badge/Cloudinary-grey?logo=cloudinary&logoColor=3448C5)](https://cloudinary.com) used for online static file storage.
-- [![WhiteNoise](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
-- [![Stripe](https://img.shields.io/badge/Stripe-grey?logo=stripe&logoColor=008CDD)](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [![Gmail API](https://img.shields.io/badge/Gmail_API-grey?logo=gmail&logoColor=EA4335)](https://mail.google.com) used for sending emails in my application.
-- [![MailChimp](https://img.shields.io/badge/MailChimp-grey?logo=mailchimp&logoColor=FFE01B)](https://mailchimp.com) used for sending newsletter subscriptions.
-- [![AWS S3](https://img.shields.io/badge/AWS_S3-grey?logo=amazons3&logoColor=569A31)](https://aws.amazon.com/s3) used for online static file storage.
-- [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
-- [![Figma](https://img.shields.io/badge/Figma-grey?logo=figma&logoColor=F24E1E)](https://www.figma.com) used for creating wireframes.
-- [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
-- [![Google Maps API](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) used as an interactive map on my site.
-- [![Leaflet](https://img.shields.io/badge/Leaflet-grey?logo=leaflet&logoColor=199900)](https://leafletjs.com) used as a free open-source interactive map on my site.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
@@ -283,53 +154,50 @@ Feel free to delete any unused items below as necessary.
 
 To follow best practice, a flowchart was created for the app's logic,
 and mapped out before coding began using a free version of
-[Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning) and/or [Draw.io](https://www.draw.io).
+[Draw.io](https://www.draw.io).
 
-Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
+Below is the flowchart of the main process of this Python program. While some features have been added since, the fundamental logic of the application remains relevant and apparent.
 
-![screenshot](documentation/flowchart.png)
+![flowchart](documentation/flowchart/ppthree-flowchart.png)
 
 ### Classes & Functions
 
-The program uses classes as a blueprint for the project's objects (OOP). This allows for the object to be reusable.
+The program uses object oriented programming in the form of the NewOrder Class. Instances of this class have the new_order property, which is a dictionary that contains every menu item as a key, with each corresponding value set to None. When a quantity of an item is ordered, the value of that item is changed through the add_item() method. 
 
-```python
-class Person:
-    """ Insert docstring comments here """
-    def __init__(self, name, age, health, inventory):
-        self.name = name
-        self.age = age
-        self.health = health
-        self.inventory = inventory
-```
+![flowchart](documentation/class/class.png)
 
-The primary functions used on this application are:
+Before the startscreen() function is called, which starts the entire program, an instance of NewOrder is created and stored in the variable new_order. 
 
-- `get_sales_data()`
-    - Get sales figures input from the user.
-- `validate_data()`
-    - Converts all string values into integers.
-- `update_worksheet()`
-    - Update the relevant worksheet with the data provided.
-- `calculate_surplus_data()`
-    - Compare sales with stock and calculate the surplus for each item type.
-- `get_last_5_entries_sales()`
-    - Collects columns of data from sales worksheet.
-- `calculate_stock_data()`
-    -  Calculate the average stock for each item type, adding 10%.
-- `main()`
-    - Run all program functions.
+![flowchart](documentation/class/instantiation.png)
+
+At the end of the process_payment() function, just before the user's interaction with this program/sales kiosk comes to an end, the reset_new_order() function is called. This iterates over new_order.new_order, setting the value of each key back to None before a new customer makes their own order.
+
+![flowchart](documentation/class/reset-values.png)
+
+A variety of methods and functions are used throughout the application, such as starters_menu(), vacate_premises(), reset_new_order(), clear(), main_menu(), startscreen(),
+re.match(), random.randint(), init(), process_payment(), etc etc. The application also utilises match conditional statements.
 
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
 
-- `gspread`: used with the Google Sheets API
-- `google.oauth2.service_account`: used for the Google Sheets API credentials
-- `time`: used for adding time delays
-- `os`: used for adding a `clear()` function
-- `colorama`: used for including color in the terminal
-- `random`: used to get a random choice from a list
+import time
+import random
+import os
+import sys
+import re
+import pyfiglet
+from colorama import init, Fore, Back
+
+
+- `time` : sleep(seconds) method used throughout program 
+- `random` : used for generation of collection number at end of process_payment() function
+- `os` and `sys` : used for `clear()` function
+- `re` : used for re.match() method for pin verification
+- `colorama` : used for including color
+- `pyfiglet` : used to stylise text 
+
+I also installed [Black](https://pypi.org/project/black/) to help with formatting run.py to align with PEP 8 Style Guidelines.
 
 ## Testing
 
@@ -435,93 +303,36 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+There are no differences between the local version and the deployed live version on Heroku.
 
 ## Credits
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### Content
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [Code Institute](codeinstitute.net) | Entire Site | Some stucture and code taken from Love Sandwiches Walkthrough Project and Python Essentials Module |
+| [Viacheslav1510's PP3, shown in class](https://github.com/Code-Institute-Submissions/CI_PP3_Coffee_Machine/blob/main/views/index.html) | HTML and CSS Styling | Use of flexbox, social media icons and colour styling|
+|[Harvard's CS50P Course, specifically this lecture on regex](https://www.youtube.com/watch?v=hy3sd9MOAcc&t=1s) | run.py | Use of re.match() |
+|[Geeks for Geeks article about Pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/) | run.py | Importing and using Pyfiglet module|
+|[Geeks for Geeks article about Colorama](https://www.geeksforgeeks.org/print-colors-python-terminal/) | run.py | Use of Colorama |
+|[PEPS article about conventions for using constants](https://peps.python.org/pep-0008/#constants) | run.py | Constants must be capitalised |
+|[Geeks for Geeks article about how to clear a terminal of text](https://www.geeksforgeeks.org/clear-screen-python/) | run.py | import sys and os built in modules to create clear() function |
+|[Harvard CS50P video](https://www.youtube.com/watch?v=_b6NgY_pMdw) | run.py | Use of match conditional statements |
+|Code Institute's Python Essentials module | run.py | Use of Try and Except keywords for error handling |
+|[Geeks for Geeks](https://www.geeksforgeeks.org/iterate-python-dictionary/) | run.py, cancel_items() function | How to iterate over a dictionary |
+|[Geeks for Geeks](https://www.geeksforgeeks.org/python-filter-non-none-dictionary-keys/) | run.py, remove_items() function | Code template for iterating through dictionaries and filtering out keys without None values |
+|[W3Schools](https://www.w3schools.com/python/python_lists_comprehension.asp) | run.py | List comprehension used in remove_items() function |
+|[Stack Overflow](https://stackoverflow.com/questions/419163/what-does-if-name-main-do) | run.py | best practice for command line applications that import modules |
 
 ### Media
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [Font Awesome](https://fontawesome.com) | entire site | image | Social media link icons in footer |
 
 ### Acknowledgements
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-⚠️⚠️ EXAMPLES ONLY - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+Thanks to Tim Nelson for his help and guidance. 
+Thanks to Marko Tot for same. 

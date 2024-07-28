@@ -113,8 +113,6 @@ def startscreen():
 
 
 # code based on https://www.geeksforgeeks.org/clear-screen-python/
-
-
 def clear():
     """this function clears text on the terminal"""
     os.system("cls" if os.name == "nt" else "clear")
@@ -905,8 +903,6 @@ def desserts_menu():
 
 # cancel items functionality based on code set out in
 # https://www.geeksforgeeks.org/iterate-python-dictionary/
-
-
 def cancel_items():
     """the functionality within the cancel items sub menu
     to remove individual items from an order"""
@@ -981,8 +977,6 @@ def cancel_items():
 
 # remove item functionality based on code set out in
 # https://www.geeksforgeeks.org/python-filter-non-none-dictionary-keys/
-
-
 def remove_item(index):
     """function used in cancel_items() to remove an item from an order"""
     # adjust index for zero-based indexing
