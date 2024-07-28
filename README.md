@@ -20,80 +20,207 @@ The Pyfiglet module was used to provide additional styling to the menu screens, 
 
 - As a user, I would like to easily navigate the menu of the restaurant, so that I can make an informed decision about my order.
 - As a user, I would like to have the ability to change my order, in case I order the wrong item my mistake.
-- As a new user, I would like the kiosk to work well so that I can make an order without having to deal with bugs that would stress me out and ruin my experience.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-
-### Returning Site Users
-
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a user, I would like the kiosk to work well so that I can make an order without having to deal with bugs that would stress me out and detract from my experience.
+- As a user, I would like to get a collection number at the end of my order, so that I can collect my food from the counter when it's ready.
 
 ## Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### Existing Features
 
-- **YOUR-TITLE-FOR-FEATURE-#1**
+#### Welcome Screen
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+![Welcome Screen](documentation/features/features-one.png)
 
-![screenshot](documentation/features/feature01.png)
+The first screen welcomes the user to the restaurant, orienting them within the application with a clear starting point. 
 
-- **YOUR-TITLE-FOR-FEATURE-#2**
+#### Run Program Button
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+![Run Program Button](documentation/features/features-two.png)
 
-![screenshot](documentation/features/feature02.png)
+The button at the top of the site reloads the page and restarts the application.
 
-- **YOUR-TITLE-FOR-FEATURE-#3**
+#### Social Media Links in Footer
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+![Social Media Links in Footer](documentation/features/features-three.png)
 
-![screenshot](documentation/features/feature03.png)
+Two functional links can be accessed by clicking the two Font Awesome-sourced icons within the footer. The icons are stylised to match the colour scheme of the site. 
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+#### Browser Tab Title
 
-Repeat as necessary for as many features as your site contains.
+![Browser Tab Title](documentation/features/features-four.png)
 
-Hint: the more, the merrier!
+The browser tab features the name of the application. 
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+#### Interactivity
+
+![Interactivity](documentation/features/features-five.png)
+
+Throughout the application, the user can enter commands to navigate from one screen to another, order menu items, cancel items, etc. 
+
+#### Text Styling
+
+![Text Styling](documentation/features/features-six.png)
+
+Pyfiglet is used throughout the application to add interest to the aesthetic of the site and contribute to a positive user experience. 
+
+#### Text Colouring
+
+![Text Styling](documentation/features/features-seven.png)
+
+Colorama is used throughout the application to add variety and emphasis to the text as appropriate.  
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+#### Main Menu
+
+![Text Styling](documentation/features/features-eight.png)
+
+A main menu screen orients the user within the application. 
+
+
+
+
+
+
+#### Start Button
+
+![Start Button](documentation/features/start-button.gif)
+
+Clicking the Start Button starts the game. 
+
+#### How to Play Button and Return Buttons
+
+![How to Play and Return Buttons](documentation/features/how-to-play-button.gif)
+
+Clicking the How to Play button makes a box pop up which shows the rules of the game. A Return button allows the user to return back to the main menu. 
+
+#### Favicon
+
+![Favicon](documentation/features/favicon.png)
+
+The pages of the website have a favicon of the cross from the animation loop on the main menu/landing page. 
+
+#### Footer and Social Media Link
+
+![Social Media Link and Footer](documentation/features/social-media-link.png)
+
+The footer is present on the main page and the 404 page. It constantly remains at the bottom of the webpage at all times. It contains a social media link that opens up in a new tab. 
+
+#### 404 Page
+
+![404 Page](documentation/features/error-page.png)
+
+If there is a 404 error, the user will be sent to the 404 page. This page features an illustration of the priest player character, with a Return to Main Menu button which provides a link back to index.html.  
+
+#### Opening Sequence
+
+![Opening Sequence](documentation/features/opening-sequence.gif)
+
+Upon clicking the Start button on the main page, an opening animation with first-person narration from the perspective of the priest player character commences. 
+
+#### Continue Button
+
+![Continue Button](documentation/features/continue-button.png)
+
+After the opening sequence and between typing rounds, the Continue button allows the user to interact with the website and progress to the next part of the game and story.
+
+#### Prayer Display, Player Input and Timer
+
+![Prayer Display, Player Input and Timer](documentation/features/prayer-display-player-input.gif)
+
+The main gameplay mechanic is facilitated through these three boxes, which appear once a typing round begins. The player is must type what is shown in the Prayer Display area in the Player Input area. If the input is correct, the corresponding character in the Prayer Display area turns green in colour. If the input is incorrect, the corresponding character turns red. The correct input must be put into the Player Input area before the timer counts down from ten to zero, or the player will lose the game.
+
+Under the hood, the game inserts one of 20 Latin phrases into the Prayer Display Area. This ensures replayability and that the player won't play the same game twice.
+
+#### Reactive Enemy Animation Display
+
+![Enemy Animation Display](documentation/features/enemy-animation-display.gif)
+
+Each typing round is characterised by a section which displays enemy intro, fight, and defeat animations.
+
+![Reactive Enemy Animation Display](documentation/features/enemy-animation-display-reactive.gif)
+
+Upon clicking the Next button, the animation display reacts and changes. The animation also changes from the respective enemy's fight animation to their defeat animation once the user correctly types out the Latin phrase before the timer runs out.
+
+#### Lose State
+
+![Lose State](documentation/features/lose-state.gif)
+
+If the player fails to enter the prayer before the timer runs out, a box appears stating "You lose! Try again". Upon clicking the red "Retry" button, the player is returned to the main menu. 
+
+#### Closing Animation and Return to Main Menu Button
+
+![Closing Animation and Return to Main Menu Button](documentation/features/closing-sequence-return-to-main-menu.gif)
+
+If the player completes all three rounds successfully, they will the closing sequence and see the end of the story. Once the final animation is playing, a button will appear providing access back to the main menu. 
 
 ### Future Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+- Favicon
+    - Couldn't do it this time, would like to add .svg image of an onion ring in the future.
 
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#1
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
-    - Any additional notes about this feature.
+- Audio
+    - Originally, an interactive audio component was to be included. However, it was too much work within the timeframe of the project. Intro and outro music, fight music, and transition chimes between scenes will be needed for a truly immersive experience. 
+- Health System
+    - Instead of a round per enemy, it would be better if there were multiple rounds per enemy. If the player failed to enter the text in time, they would lose one heart out of a maximum of three; upon winning a round, the player would recover some health before moving onto the next round.
+- Increasing difficulty
+  - The length of the phrases to be typed and the amount of available time will become more challenging as the levels progress. 
+- Larger RPG World
+  - Using a web library such as phaser.js or three.js, a top-down RPG style environment could be created in which the player character could freely move about. Typing rounds could be triggered in the same manner as turn-based battles in RPG video games like Final Fantasy, Pokemon, etc. 
+- Improved Art
+  - ... and more of it - more animations, more detail, more characters. 
 
 ## Tools & Technologies Used
 

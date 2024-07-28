@@ -935,10 +935,8 @@ def cancel_items():
         print(f"Total: €{total:.2f}")
         print(
             Fore.RED
-            + "Please note that selecting an item will remove every"
-            + " portion of it from your order."
-            + Fore.RESET
-        )
+            + "Please note that selecting an item will remove every")
+        print("portion of it from your order." + Fore.RESET)
         print("")
         print("Please select option")
         while True:
