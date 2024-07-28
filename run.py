@@ -227,7 +227,7 @@ def cancel_order():
         if answer.lower() == "y":
             clear()
             print("Fair enough, come back when you're")
-            print("not going to waste our time!")
+            print(" not going to waste our time!")
             time.sleep(3)
             reset_new_order()
             startscreen()
@@ -279,7 +279,7 @@ def starters_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
+                                + " You must order at least 1 item to "
                                 + "add it to your order."
                                 + Fore.RESET
                             )
@@ -288,7 +288,7 @@ def starters_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -300,14 +300,14 @@ def starters_menu():
                                 )
                             print(
                                 f"{ordered_quantity} x Small Onion Rings"
-                                + "added to your order"
+                                + " added to your order"
                             )
                             time.sleep(2)
                     except ValueError:
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -318,8 +318,8 @@ def starters_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item"
-                                + "to add it to your order."
+                                + " You must order at least 1 item"
+                                + " to add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -327,7 +327,7 @@ def starters_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -339,14 +339,14 @@ def starters_menu():
                                 )
                             print(
                                 f"{ordered_quantity} x Mozzarella Sticks"
-                                + "added to your order"
+                                + " added to your order"
                             )
                             time.sleep(2)
                     except ValueError:
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -360,7 +360,7 @@ def starters_menu():
                     print(
                         Fore.RED
                         + f'"{ordered_quantity}" is an invalid input,'
-                        + 'try again.'
+                        + ' try again.'
                         + Fore.RESET
                     )
                     time.sleep(2)
@@ -397,8 +397,8 @@ def sides_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -406,7 +406,7 @@ def sides_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -422,7 +422,7 @@ def sides_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -433,8 +433,8 @@ def sides_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -442,7 +442,7 @@ def sides_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -461,7 +461,7 @@ def sides_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -472,8 +472,8 @@ def sides_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -481,7 +481,7 @@ def sides_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -496,7 +496,7 @@ def sides_menu():
                     except:
                         print(Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET)
                         time.sleep(2)
                 case "4":
@@ -509,7 +509,7 @@ def sides_menu():
                     print(
                         Fore.RED
                         + f'"{ordered_quantity}" is an invalid input,'
-                        + 'try again.'
+                        + ' try again.'
                         + Fore.RESET
                         )
                     time.sleep(2)
@@ -546,8 +546,8 @@ def mains_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -555,7 +555,7 @@ def mains_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -574,7 +574,7 @@ def mains_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -585,8 +585,8 @@ def mains_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -594,7 +594,7 @@ def mains_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -613,7 +613,7 @@ def mains_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -624,8 +624,8 @@ def mains_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -633,7 +633,7 @@ def mains_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -651,7 +651,7 @@ def mains_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -665,7 +665,7 @@ def mains_menu():
                     print(
                         Fore.RED
                         + f'"{ordered_quantity}" is an invalid input,'
-                        + 'try again.'
+                        + ' try again.'
                         + Fore.RESET
                         )
                     time.sleep(2)
@@ -701,8 +701,8 @@ def drinks_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -710,7 +710,7 @@ def drinks_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -726,7 +726,7 @@ def drinks_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -737,8 +737,8 @@ def drinks_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -746,7 +746,7 @@ def drinks_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -761,7 +761,7 @@ def drinks_menu():
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -775,7 +775,7 @@ def drinks_menu():
                     print(
                         Fore.RED
                         + f'"{ordered_quantity}" is an invalid input,'
-                        + 'try again.'
+                        + ' try again.'
                         + Fore.RESET
                         )
                     time.sleep(2)
@@ -811,8 +811,8 @@ def desserts_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -820,7 +820,7 @@ def desserts_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -832,14 +832,14 @@ def desserts_menu():
                                 )
                             print(
                                 f"{ordered_quantity} x Nutella Onion Rings"
-                                + "added to your order"
+                                + " added to your order"
                             )
                             time.sleep(2)
                     except ValueError:
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -850,8 +850,8 @@ def desserts_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "You must order at least 1 item to"
-                                + "add it to your order."
+                                + " You must order at least 1 item to"
+                                + " add it to your order."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -859,7 +859,7 @@ def desserts_menu():
                             print(
                                 Fore.RED
                                 + f"You entered {ordered_quantity}:"
-                                + "This is an invalid input, please try again."
+                                + " This is an invalid input, please try again."
                                 + Fore.RESET
                             )
                             time.sleep(2)
@@ -870,14 +870,14 @@ def desserts_menu():
                             )
                             print(
                                 f"{ordered_quantity} x Pistachio Onion Rings"
-                                + "added to your order"
+                                + " added to your order"
                             )
                             time.sleep(2)
                     except ValueError:
                         print(
                             Fore.RED
                             + f'"{ordered_quantity}" is an invalid input,'
-                            + 'try again.'
+                            + ' try again.'
                             + Fore.RESET
                         )
                         time.sleep(2)
@@ -891,7 +891,7 @@ def desserts_menu():
                     print(
                         Fore.RED
                         + f'"{ordered_quantity}" is an invalid input,'
-                        + 'try again.'
+                        + ' try again.'
                         + Fore.RESET
                         )
                     time.sleep(2)
@@ -914,7 +914,7 @@ def cancel_items():
     if valid_items == []:
         print(
             "There are no items currently on your order." +
-            "Returning to Main Menu"
+            " Returning to Main Menu"
             )
         time.sleep(2)
         main_menu()
@@ -930,7 +930,7 @@ def cancel_items():
         print(
             Fore.RED
             + "Please note that selecting an item will remove every"
-            + "portion of it from your order."
+            + " portion of it from your order."
             + Fore.RESET
         )
         print("")
@@ -947,7 +947,7 @@ def cancel_items():
                     if not valid_items:
                         print(
                             "There are no items currently on your order."
-                            + "Returning to Main Menu"
+                            + " Returning to Main Menu"
                         )
                         time.sleep(2)
                         main_menu()
@@ -1012,7 +1012,7 @@ def display_order():
     if current_order == []:
         print(
             "There are no items currently on your order."
-            + "Returning to Main Menu")
+            + " Returning to Main Menu")
         time.sleep(2)
         main_menu()
     else:
@@ -1054,7 +1054,7 @@ def finalise_order():
     print("")
     print(
         "This is your order. Would you like to make any changes"
-        + "before submitting it?"
+        + " before submitting it?"
     )
     print("")
     print("1. Return to Main Menu")
@@ -1095,7 +1095,7 @@ def display_finalised_order():
     if current_order == []:
         print(
             "There are no items currently on your order."
-            + "Returning to Main Menu"
+            + " Returning to Main Menu"
         )
         time.sleep(2)
         main_menu()
@@ -1142,7 +1142,7 @@ def process_payment():
         # as stated above, code below based on CS50P's lecture on regex
         pin = input(
             "Please enter your four-digit bank card pin number"
-            + "that we will not record...\n"
+            + " that we will not record...\n"
         )
         match = re.match(pattern, pin)
         if match:
