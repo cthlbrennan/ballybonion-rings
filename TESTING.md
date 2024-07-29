@@ -103,17 +103,132 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## Bugs
 
-### 1 - Animation Loop not appearing on main menu
-![screenshot](documentation/bugs/bug-one/bug-one-screenshot-one.png)
+### 1 - Starters Menu Error Handling 
 
-Upon landing on the main menu, the cross animation wasn't visible, even though the keyframe, animation style property, and file path were all apparently correct. 
+The code for the starters menu was originally as shown below:
 
-![screenshot](documentation/bugs/bug-one/bug-one-screenshot-two.png)
+![screenshot](documentation/testing/bugs/bug-one/bug-one-one.png)
 
-However, after some time, I realised that the animation shorthand property actually was incorrect - instead of saying '0.1s' as required, I needed to say '1.0s' - this value can't just be a floating point, there needs to be a number before the floating point for the property to work properly.
-![screenshot](documentation/bugs/bug-one/bug-one-screenshot-three.png)
+Even though there was an if/else statement, if an adversarial input such 'gggg' was inputted for the "How Many?" prompt, the program would break before the else statement would have a chance to be implemented.
 
-This was later changed to 3s, as the animation was much too fast at 0.1s. 
+![screenshot](documentation/testing/bugs/bug-one/bug-one-two.png)
+
+![screenshot](documentation/testing/bugs/bug-one/bug-one-three.png)
+
+However, I implemented the Try and Except keywords correctly as per the Python Essentials module.
+
+![screenshot](documentation/testing/bugs/bug-one/bug-one-four.png)
+
+With this additional code, invalid inputs were caught and error handling was in place.
+
+![screenshot](documentation/testing/bugs/bug-one/bug-one-five.png)
+
+![screenshot](documentation/testing/bugs/bug-one/bug-one-six.png)
+
+### 2 - Main Menu options not appearing aftering Welcome Menu 
+
+The main menu options would not appear after entering 'y'/'Y' at the Welcome Menu.
+
+![screenshot](documentation/testing/bugs/bugs-two/bug-two-one.gif)
+
+This issue was resolved by removing the additional, accidental clear() function that had been included at line 133 in the code above.
+
+![screenshot](documentation/testing/bugs/bugs-two/bug-two-two.gif)
+
+### 3 - Cancel Items menu, total price inaccurate 
+
+The total price figure at the Cancel Items menu was incorrect.
+
+![screenshot](documentation/testing/bugs/bug-three/bug-three-one.png)
+
+In the above code, the 'total' variable was reinitialised to 0 after each iteration of the for loop - this was the problem. By moving the 'total' variable to the start of the function outside of the for loop, this aspect of the code worked properly.
+
+![screenshot](documentation/testing/bugs/bug-three/bug-three-two.png)
+
+### 4 - UnboundLocalError bug for Pistachio Onion Rings menu option 
+
+Ordering this menu item broke the program entirely. However, I soon discovered that there was a typo - the ordered_quantity variable was spelled with a '2' at the end, causing an UnboundLocalError. The program functioned properly once this typo was addressed.
+
+![screenshot](documentation/testing/bugs/bug-four/bug-four.png)
+
+### 5 - not_make_order function invalid input looping
+
+If an invalid input was entered for this screen, the error handling message would recur every 2 seconds in an infinite loop with no recourse for the user to escape other than push the 'Run Program' button again to reload the application.
+
+![screenshot](documentation/testing/bugs/bug-five/bug-five-one.gif)
+
+It was soon found that there had been an improper use of the 'continue' keyword at line 104 as shown above. Once this was removed, the problem was resolved.
+
+![screenshot](documentation/testing/bugs/bug-five/bug-five-two.gif)
+
+### 6 - Zero values when adding menu items to order
+
+There was a bug where even if the user said that they didn't want any of a menu item, the terminal still displayed the message that '0' of an item was added to their order. 
+
+![screenshot](documentation/testing/bugs/bug-seven/bug-seven-one.png)
+
+![screenshot](documentation/testing/bugs/bug-seven/bug-seven-two.png)
+
+![screenshot](documentation/testing/bugs/bug-seven/bug-seven-three.png)
+
+![screenshot](documentation/testing/bugs/bug-seven/bug-seven-four.png)
+
+While this didn't break the program or cause any technical issue, it was clearly an irrational feature that undermined the quality of the application. The code below resolved the issue.
+
+![screenshot](documentation/testing/bugs/bug-seven/bug-seven-five.png)
+
+![screenshot](documentation/testing/bugs/bug-seven/bug-seven-six.png)
+
+### 7 - Keys used in Finalise Order menu
+
+When viewing the finalised order in the Finalise Order Menu, the terminal showed the menu items as they written in the two dictionaries - new_order.new_order and PRICES. Similar to above, this would give a poor impression of the application and business to users. 
+
+![screenshot](documentation/testing/bugs/bug-eight/bug-eight-one.png)
+
+![screenshot](documentation/testing/bugs/bug-eight/bug-eight-two.png)
+
+By introducing another dictionary called NAMES, the terminal output became more professional and the bug was removed.
+
+![screenshot](documentation/testing/bugs/bug-eight/bug-eight-three.png)
+
+![screenshot](documentation/testing/bugs/bug-eight/bug-eight-four.png)
+
+### 8 - Inconsistency between floats and integers
+
+The lack of consistency between floats and integers was noticeable and distracting when using the application. 
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-one.png)
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-two.png)
+
+I first tried to introduce some consistency by changing the values of the PRICES dictionary to floats, with two numbers behind the point.
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-three.png)
+
+However, this didn't work. Values added together would format as a floating number with only one number behind the point.
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-four.png)
+
+However, by including float formating as part of the f-string shown below and highlighted, I achieved the desired result.  
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-five.png)
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-six.png)
+
+![screenshot](documentation/testing/bugs/bug-nine/bug-nine-seven.png)
+
+
+## Git Commit Messages
+
+All commit messages on Github are less than 50 characters, written in the imperative mood, don't contain special characters, don't end in punctuation and succinctly summarise the content of the respective commit. However, the third commit states the following:
+
+"Add start NewOrder class ander menu menus functionality"
+
+The next commit message, what I really wanted to write, states the following:
+
+"Add NewOrder class and starters menu functionality"
+
+There are some obvious typos in the third message. Sometimes, I have found that when making a commit using a cloud-based IDE, the sequence of the text of the commit message can get scrambled and put out of order, as clearly happened above. Apart from this flaw, the rest of the commit messages are fine.
 
 ## Unfixed Bugs
 
