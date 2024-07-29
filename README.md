@@ -127,9 +127,6 @@ If the user wants to cancel their order altogether, they can press 9 on the main
 From the Finalise Order Menu, the user can type 3 to proceed to make a payment. The elipses animations emulate the real-world lag that accompanies card payments. The user is asked to input a four number pin code (any four single-digit numbers between 0 and 9). Upon inputting this code, the user is thanked for their custom, given a randomly-generated four-digit collection number for collecting their food from the counter, and then the user is sent back to the Welcome Menu. 
 
 ### Future Features
-
-- Favicon
-    - I was not able to add a favicon. From looking at Stack Overflow, it appears that this is a common issue when deploying apps through Heroku. In the future I will add this feature.
 - Removing specific quantity of item
     - At the moment, the user can remove items from their order from the Cancel Items menu, however they can only remove all of a single item. If they have two BallybOnion Super Boxes ordered, for example, and they only wanted one, then they would have to cancel both boxes, then add another one afterwards. In the future, this will be amended so that users can be more precise in how many portions of an item they want to remove from their order. 
 
