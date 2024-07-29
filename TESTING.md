@@ -63,7 +63,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-Defensive programming was manually tested with the below user acceptance testing:
+Defensive programming was manually tested, with results set out below. Click on screenshots to zoom in. 
 
 | Expectation | Test | Result | Fix | Screenshot |
 | --- | --- | --- | --- | --- |
