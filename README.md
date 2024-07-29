@@ -20,7 +20,6 @@ The Pyfiglet module was used to provide additional styling to the menu screens, 
 
 - As a user, I would like to easily navigate the menu of the restaurant, so that I can make an informed decision about my order.
 - As a user, I would like to have the ability to change my order, in case I order the wrong item my mistake.
-- As a user, I would like the kiosk to work well so that I can make an order without having to deal with bugs that would stress me out and detract from my experience.
 - As a user, I would like to get a collection number at the end of my order, so that I can collect my food from the counter when it's ready.
 
 ## Features
@@ -147,6 +146,7 @@ From the Finalise Order Menu, the user can type 3 to proceed to make a payment. 
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
+- [UI.dev](https://ui.dev/amiresponsive?url=https://ballybonion-rings-709267bfe701.herokuapp.com/) used to see responsiveness on different sized devices
 
 ## Data Model
 
