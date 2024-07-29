@@ -44,11 +44,11 @@ The button at the top of the site reloads the page and restarts the application.
 
 Two functional links can be accessed by clicking the two Font Awesome-sourced icons within the footer. The icons are stylised to match the colour scheme of the site. The links open in new tabs, leaving the application browser tab open. 
 
-#### Browser Tab Title
+#### Browser Tab Title and Favicon
 
 ![Browser Tab Title](documentation/features/features-four.png)
 
-The browser tab features the name of the application. 
+The browser tab features the name of the application. The favicon depicts a pack of onion rings. 
 
 #### Interactivity
 
@@ -330,6 +330,7 @@ There are no differences between the local version and the deployed live version
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
 | [Font Awesome](https://fontawesome.com) | entire site | image | Social media link icons in footer |
+| [Flaticon](https://www.flaticon.com/free-icon/onion-rings_851714) | entire site | image | Favicon |
 
 ### Acknowledgements
 
