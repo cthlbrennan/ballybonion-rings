@@ -20,7 +20,7 @@ function socket() {
             name: 'xterm-color',
             cols: 80,
             rows: 24,
-            cwd: process.env.PWD,
+            cwd: process.env.PWD || process.cwd(),
             env: process.env
         });
 
