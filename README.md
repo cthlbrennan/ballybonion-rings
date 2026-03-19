@@ -1,6 +1,6 @@
 ![logo](documentation/introduction/logo.png)
 
-[Live site hosted on Heroku](https://ballybonion-rings-709267bfe701.herokuapp.com)
+[Live site hosted on Heroku](https://ballybonion-rings.onrender.com)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/cthlbrennan/ballybonion-rings)](https://github.com/cthlbrennan/ballybonion-rings/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/cthlbrennan/ballybonion-rings)](https://github.com/cthlbrennan/ballybonion-rings/commits/main)
